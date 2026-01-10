@@ -510,3 +510,130 @@ textarea.input{resize:vertical}
     grid-template-columns: 1fr !important;
   }
 }
+.linkLogo{width:22px;height:22px;display:block}
+
+.navRight{display:flex;align-items:center;gap:10px}
+
+.links--desktop{display:flex}
+.navMenu{display:none;position:relative}
+.navMenu>summary{list-style:none}
+.navMenu>summary::-webkit-details-marker{display:none}
+.navMenu__panel{
+  position:absolute;right:0;top:54px;min-width:190px;
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(10,12,18,.92);
+  backdrop-filter: blur(14px);
+  border-radius: 16px;
+  padding:10px;
+  display:flex;flex-direction:column;gap:6px;
+  box-shadow: 0 14px 40px rgba(0,0,0,.45);
+}
+.navMenu__panel a{
+  color:var(--muted);
+  padding:10px 12px;
+  border-radius: 12px;
+  text-decoration:none;
+}
+.navMenu__panel a:hover{background: rgba(255,255,255,.06);color:var(--text)}
+
+@media (max-width: 900px){
+  .links--desktop{display:none}
+  .navMenu{display:block}
+  .nav__inner{padding:12px 14px}
+  .wrap{padding:0 14px}
+  .hero{gap:14px}
+  .hero__card{padding:18px}
+  .githubControls{width:100%}
+  .githubControls .input{width:100%}
+}
+
+@media (max-width: 520px){
+  .ctaRow{flex-wrap:wrap}
+  .ctaRow .btn{width:100%}
+  .linkCard{padding:14px}
+  .linkIcon{width:42px;height:42px}
+}
+    @media (max-width: 768px) {
+
+  body{
+    overflow-x: hidden;
+  }
+
+  .wrap{
+    padding: 90px 16px 40px;
+  }
+
+  .hero{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero__card{
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .hero__mini{
+    width: 100%;
+    max-width: 420px;
+    margin: 20px auto 0;
+  }
+
+  .pillRow{
+    justify-content: center;
+  }
+
+  .ctaRow{
+    justify-content: center;
+  }
+
+  .aboutGrid,
+  .priceGrid,
+  .linkGrid,
+  .repoGrid,
+  .contactGrid{
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .sectionHead{
+    text-align: center;
+  }
+
+  .nav__inner{
+    justify-content: space-between;
+  }
+
+  .links{
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 32px);
+    max-width: 420px;
+    background: rgba(10,10,20,.95);
+    border-radius: 14px;
+    padding: 14px;
+    box-shadow: 0 0 40px rgba(255,0,50,.2);
+  }
+
+  .links a{
+    display: block;
+    padding: 12px;
+    text-align: center;
+  }
+
+  .links.open{
+    display: block;
+  }
+
+  .menuBtn{
+    display: inline-flex;
+  }
+}
+
+
