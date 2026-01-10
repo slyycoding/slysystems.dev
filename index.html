@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#05060a" />
   <title>Sly | Smooth Operator</title>
   <meta name="description" content="Sly — Smooth Operator." />
 
@@ -29,7 +30,7 @@
         <span class="brand__text">Sly</span>
       </a>
 
-      <nav class="links">
+      <nav class="links links--desktop">
         <a href="#about">About</a>
         <a href="#links">Links</a>
         <a href="#pricing">Pricing</a>
@@ -37,7 +38,20 @@
         <a href="#contact">Contact</a>
       </nav>
 
-      <button id="fxBtn" class="iconBtn" aria-label="Toggle FX">FX</button>
+      <div class="navRight">
+        <button id="fxBtn" class="iconBtn" aria-label="Toggle FX">FX</button>
+
+        <details class="navMenu">
+          <summary class="iconBtn menuBtn" aria-label="Menu">☰</summary>
+          <div class="navMenu__panel">
+            <a href="#about">About</a>
+            <a href="#links">Links</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#github">GitHub</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </details>
+      </div>
     </div>
   </header>
 
@@ -131,9 +145,7 @@
           </ul>
 
           <div class="divider"></div>
-          <p class="muted small">
-            Been doing this a long time, you'll be in good hands don't worry.
-          </p>
+          <p class="muted small">Been doing this a long time, you'll be in good hands don't worry.</p>
         </div>
       </div>
     </section>
@@ -194,7 +206,9 @@
 
       <div class="linkGrid">
         <a class="linkCard" id="linkInsta" target="_blank" rel="noreferrer">
-          <div class="linkIcon">眼</div>
+          <div class="linkIcon">
+            <img class="linkLogo" src="assets/instagram.svg" alt="Instagram" />
+          </div>
           <div>
             <h3>Instagram</h3>
             <p class="muted">Design posts + drops</p>
@@ -203,7 +217,9 @@
         </a>
 
         <a class="linkCard" id="linkTwitter" target="_blank" rel="noreferrer">
-          <div class="linkIcon">刃</div>
+          <div class="linkIcon">
+            <img class="linkLogo" src="assets/x.svg" alt="X" />
+          </div>
           <div>
             <h3>X</h3>
             <p class="muted">Updates + links</p>
@@ -212,7 +228,9 @@
         </a>
 
         <a class="linkCard" id="linkGithub" target="_blank" rel="noreferrer">
-          <div class="linkIcon">零</div>
+          <div class="linkIcon">
+            <img class="linkLogo" src="assets/github.svg" alt="GitHub" />
+          </div>
           <div>
             <h3>GitHub</h3>
             <p class="muted">Projects + code</p>
@@ -271,9 +289,7 @@
           <p class="muted small" id="copyToast" aria-live="polite"></p>
 
           <div class="divider"></div>
-          <p class="muted small">
-            Here are the best ways to contact me :D  <span class="mono"></span>
-          </p>
+          <p class="muted small">Here are the best ways to contact me :D</p>
         </div>
 
         <form class="card form" id="contactForm">
@@ -290,9 +306,7 @@
           </label>
 
           <button class="btn primary" type="submit">Create Email Draft</button>
-          <p class="muted small">
-            If you have any questions or queries, feel free to reach out.
-          </p>
+          <p class="muted small">If you have any questions or queries, feel free to reach out.</p>
         </form>
       </div>
     </section>
@@ -304,7 +318,8 @@
   </main>
 
   <script async src="https://www.instagram.com/embed.js"></script>
-  <script src="script.js?v=7" defer></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
+
 
