@@ -4,8 +4,8 @@ const CONFIG = {
   twitterUrl: "https://x.com/redwristsly",
   githubUrl: "https://github.com/slyycoding",
   githubUser: "slyycoding",
-  email: "you@example.com",
-  discord: "yourdiscord",
+  email: "slysystemsdev@gmail.com",
+  discord: "selectivesly",
   repoLimit: 9,
   instaPosts: []
 };
@@ -16,15 +16,11 @@ function setLinks(){
   const a=$("#linkInsta"); if(a) a.href=CONFIG.instagramUrl;
   const b=$("#linkTwitter"); if(b) b.href=CONFIG.twitterUrl;
   const c=$("#linkGithub"); if(c) c.href=CONFIG.githubUrl;
-
   const d=$("#workInstaBtn"); if(d) d.href=CONFIG.instagramUrl;
-
   const e=$("#emailText"); if(e) e.textContent=CONFIG.email;
   const f=$("#discordText"); if(f) f.textContent=CONFIG.discord;
-
   document.title=`${CONFIG.name} | Tokyo Ghoul Portfolio`;
 }
-
 
 function setYear(){ const y = $("#year"); if(y) y.textContent = new Date().getFullYear(); }
 
@@ -434,13 +430,10 @@ function init(){
   bindSmoothScroll();
   bindFxToggle();
   bindContactForm();
-
   initBackground();
   fetchRepos();
-
   renderInstagramEmbeds();
   bindEmbedRefresh();
-
   let tries = 0;
   const t = setInterval(()=>{
     tries++;
