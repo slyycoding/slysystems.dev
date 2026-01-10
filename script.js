@@ -240,4 +240,212 @@ function initBackground(){
     w = Math.floor(window.innerWidth);
     h = Math.floor(window.innerHeight);
     canvas.width = Math.floor(w * DPR);
-    canvas.heig
+    canvas.height = Math.floor(h * DPR);
+    canvas.style.width = w + "px";
+    canvas.style.height = h + "px";
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  }
+  window.addEventListener("resize", resize);
+  resize();
+
+  const count = Math.max(52, Math.min(140, Math.floor((w * h) / 15000)));
+  const shards = Array.from({ length: count }, () => ({
+    x: rand(0,1), y: rand(0,1),
+    vx: rand(-0.00028, 0.00028),
+    vy: rand(-0.00020, 0.00020),
+    s: rand(0.6, 1.7),
+    a: rand(0, Math.PI * 2),
+    va: rand(-0.006, 0.006)
+  }));
+
+  const embersN = Math.max(120, Math.min(220, Math.floor((w * h) / 9000)));
+  const embers = Array.from({ length: embersN }, () => makeEmber());
+
+  function makeEmber(){
+    return {
+      x: Math.random() * w,
+      y: Math.random() * h,
+      r: 0.8 + Math.random() * 2.2,
+      vy: 0.25 + Math.random() * 1.1,
+      vx: -0.35 + Math.random() * 0.7,
+      a: 0.10 + Math.random() * 0.35,
+      flicker: 0.6 + Math.random() * 1.8
+    };
+  }
+
+  const mouse = { x: 0.5, y: 0.5, active: false };
+  window.addEventListener("mousemove", (e)=>{
+    mouse.x = e.clientX / window.innerWidth;
+    mouse.y = e.clientY / window.innerHeight;
+    mouse.active = true;
+  });
+  window.addEventListener("mouseleave", ()=> mouse.active = false);
+
+  const eyes = [
+    { x: 0.18, y: 0.28, s: 1.0 },
+    { x: 0.82, y: 0.68, s: 1.15 }
+  ];
+
+  let t = 0;
+
+  function fx(){
+    const fxOn = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--fxOn")) || 1;
+
+    const bg = ctx.createLinearGradient(0, 0, 0, h);
+    bg.addColorStop(0, "#05060a");
+    bg.addColorStop(0.55, "#070814");
+    bg.addColorStop(1, "#03030a");
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, w, h);
+
+    ctx.save();
+    ctx.globalAlpha = 0.08 + 0.06 * fxOn;
+    for (let i = 0; i < 6; i++) {
+      const x = (Math.sin(t * 0.28 + i) * 0.5 + 0.5) * w;
+      const y = (Math.cos(t * 0.22 + i * 1.7) * 0.5 + 0.5) * h;
+      const rad = Math.min(w, h) * (0.26 + i * 0.05);
+      const haze = ctx.createRadialGradient(x, y, 0, x, y, rad);
+      haze.addColorStop(0, `rgba(160,0,0,${0.25 * fxOn})`);
+      haze.addColorStop(1, "rgba(0,0,0,0)");
+      ctx.fillStyle = haze;
+      ctx.beginPath();
+      ctx.arc(x, y, rad, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.restore();
+
+    ctx.save();
+    const pulse = (Math.sin(t * 1.25) + 1) / 2;
+    for (const e of eyes) {
+      const ex = e.x * w;
+      const ey = e.y * h;
+      const base = Math.min(w, h) * 0.09 * e.s;
+      const ring = base * (0.85 + pulse * 0.35);
+
+      const ringG = ctx.createRadialGradient(ex, ey, ring * 0.18, ex, ey, ring);
+      ringG.addColorStop(0, "rgba(255,40,40,0)");
+      ringG.addColorStop(0.6, `rgba(255,35,35,${(0.05 + pulse * 0.10) * fxOn})`);
+      ringG.addColorStop(1, "rgba(0,0,0,0)");
+      ctx.fillStyle = ringG;
+      ctx.beginPath();
+      ctx.arc(ex, ey, ring, 0, Math.PI * 2);
+      ctx.fill();
+
+      const core = ctx.createRadialGradient(ex, ey, 0, ex, ey, ring * 0.18);
+      core.addColorStop(0, `rgba(255,60,60,${(0.08 + pulse * 0.14) * fxOn})`);
+      core.addColorStop(1, "rgba(0,0,0,0)");
+      ctx.fillStyle = core;
+      ctx.beginPath();
+      ctx.arc(ex, ey, ring * 0.22, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.restore();
+
+    ctx.save();
+    ctx.globalCompositeOperation = "lighter";
+    for (let i = 0; i < embers.length; i++) {
+      const p = embers[i];
+      p.x += p.vx;
+      p.y -= p.vy;
+      if (p.y < -30 || p.x < -30 || p.x > w + 30) {
+        embers[i] = makeEmber();
+        embers[i].y = h + 20;
+      }
+      const flick = (Math.sin(t * 6 * p.flicker + i) + 1) / 2;
+      const alpha = (p.a * (0.65 + flick * 0.7)) * fxOn;
+      const r = p.r * (0.8 + flick * 0.7);
+
+      const emberG = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, r * 6);
+      emberG.addColorStop(0, `rgba(255,60,60,${alpha})`);
+      emberG.addColorStop(0.5, `rgba(200,20,20,${alpha * 0.35})`);
+      emberG.addColorStop(1, "rgba(0,0,0,0)");
+      ctx.fillStyle = emberG;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, r * 6, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.restore();
+
+    ctx.save();
+    for(const p of shards){
+      p.x += p.vx; p.y += p.vy; p.a += p.va;
+      if(mouse.active){
+        p.x += (mouse.x - p.x) * 0.00005;
+        p.y += (mouse.y - p.y) * 0.00005;
+      }
+      if(p.x < -0.05) p.x = 1.05;
+      if(p.x > 1.05) p.x = -0.05;
+      if(p.y < -0.05) p.y = 1.05;
+      if(p.y > 1.05) p.y = -0.05;
+
+      const px = p.x * w;
+      const py = p.y * h;
+      const size = 18 * p.s * DPR;
+
+      ctx.save();
+      ctx.translate(px, py);
+      ctx.rotate(p.a);
+
+      ctx.beginPath();
+      ctx.moveTo(-size * 0.9, -size * 0.25);
+      ctx.lineTo(size, 0);
+      ctx.lineTo(-size * 0.8, size * 0.35);
+      ctx.closePath();
+
+      const grad = ctx.createLinearGradient(-size, 0, size, 0);
+      grad.addColorStop(0, `rgba(255,42,63,${(0.02 + 0.08 * fxOn)})`);
+      grad.addColorStop(0.55, `rgba(255,20,60,${(0.05 + 0.18 * fxOn)})`);
+      grad.addColorStop(1, `rgba(176,0,28,${(0.03 + 0.12 * fxOn)})`);
+      ctx.fillStyle = grad;
+      ctx.fill();
+
+      ctx.strokeStyle = `rgba(255,255,255,${(0.02 + 0.05 * fxOn)})`;
+      ctx.lineWidth = 1 * DPR;
+      ctx.stroke();
+
+      ctx.restore();
+    }
+    ctx.restore();
+  }
+
+  function step(){
+    t += 0.016;
+    fx();
+    requestAnimationFrame(step);
+  }
+
+  requestAnimationFrame(step);
+}
+
+function escapeHtml(str){
+  return String(str)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
+
+function init(){
+  setLinks();
+  setYear();
+  bindCopy();
+  bindSmoothScroll();
+  bindFxToggle();
+  bindContactForm();
+
+  initBackground();
+  fetchRepos();
+
+  renderInstagramEmbeds();
+  bindEmbedRefresh();
+
+  let tries = 0;
+  const t = setInterval(()=>{
+    tries++;
+    refreshInstagramEmbeds();
+    if((window.instgrm && window.instgrm.Embeds) || tries > 12) clearInterval(t);
+  }, 700);
+}
+
+init();
