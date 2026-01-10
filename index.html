@@ -11,6 +11,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
+  <style>
+    #bg{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+    .film{position:fixed;inset:0;z-index:1;pointer-events:none}
+    .nav,.wrap{position:relative;z-index:2}
+  </style>
 </head>
 
 <body>
@@ -37,8 +42,6 @@
   </header>
 
   <main id="top" class="wrap">
-
-    <!-- HERO -->
     <section class="hero heroSimple">
       <div class="hero__card">
         <div class="pillRow">
@@ -86,7 +89,6 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
     <section id="about" class="section">
       <div class="sectionHead">
         <h2>About Me</h2>
@@ -143,7 +145,6 @@
       </div>
 
       <div class="priceGrid">
-
         <div class="priceCard">
           <h3>Tech Support</h3>
           <p class="price">$50</p>
@@ -155,38 +156,35 @@
           </ul>
         </div>
 
-<div class="priceCard highlight">
-  <h3>Web / Design</h3>
-  <p class="price">$400</p>
-  <p class="muted">one-time</p>
-  <ul>
-    <li>Full website design & development</li>
-    <li>Mobile-responsive & modern UI</li>
+        <div class="priceCard highlight">
+          <h3>Web / Design</h3>
+          <p class="price">$400</p>
+          <p class="muted">one-time</p>
+          <ul>
+            <li>Full website design & development</li>
+            <li>Mobile-responsive & modern UI</li>
+            <li>Custom branding & layout</li>
+            <li>Website deployed & live for you</li>
+            <li>Hosting setup included</li>
+            <li>24/7 support during build</li>
+            <li>3 weeks of post-launch management</li>
+            <li>Bug fixes & small edits included</li>
+          </ul>
+        </div>
 
-    <li>Custom branding & layout</li>
-    <li>Website deployed & live for you</li>
-    <li>Hosting setup included</li>
-    <li>24/7 support during build</li>
-    <li>3 weeks of post-launch management</li>
-    <li>Bug fixes & small edits included</li>
-  </ul>
-</div>
-
-<div class="priceCard">
-  <h3>Resume & Job Pack</h3>
-  <p class="price">$120</p>
-  <p class="muted">one-time</p>
-  <ul>
-    <li>Resume rewrite & formatting</li>
-    <li>ATS-friendly layout</li>
-    <li>Cover letter</li>
-    <li>Apply to up to 100 jobs</li>
-  </ul>
-</div>
- 
+        <div class="priceCard">
+          <h3>Resume & Job Pack</h3>
+          <p class="price">$120</p>
+          <p class="muted">one-time</p>
+          <ul>
+            <li>Resume rewrite & formatting</li>
+            <li>ATS-friendly layout</li>
+            <li>Cover letter</li>
+            <li>Apply to up to 100 jobs</li>
+          </ul>
+        </div>
       </div>
     </section>
-
 
     <section id="links" class="section">
       <div class="sectionHead">
@@ -306,6 +304,8 @@
   </main>
 
   <script async src="https://www.instagram.com/embed.js"></script>
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
+
+
