@@ -1,43 +1,35 @@
 const CONFIG = {
   name: "Sly",
-
   instagramUrl: "https://www.instagram.com/sly.jpeg/",
   twitterUrl: "https://x.com/redwristsly",
   githubUrl: "https://github.com/slyycoding",
   githubUser: "slyycoding",
-
-  // CHANGE THESE:
   email: "you@example.com",
   discord: "yourdiscord",
-
   repoLimit: 9,
-
-  // Paste Instagram post / reel links here to show embeds in the Design section:
-  instaPosts: [
-    // "https://www.instagram.com/p/POSTCODE/",
-    // "https://www.instagram.com/reel/REELCODE/"
-  ]
+  instaPosts: []
 };
 
 const $ = (q) => document.querySelector(q);
 
 function setLinks(){
-  $("#linkInsta").href = CONFIG.instagramUrl;
-  $("#linkTwitter").href = CONFIG.twitterUrl;
-  $("#linkGithub").href = CONFIG.githubUrl;
+  const a = $("#linkInsta"); if(a) a.href = CONFIG.instagramUrl;
+  const b = $("#linkTwitter"); if(b) b.href = CONFIG.twitterUrl;
+  const c = $("#linkGithub"); if(c) c.href = CONFIG.githubUrl;
 
-  $("#workInstaBtn").href = CONFIG.instagramUrl;
+  const d = $("#workInstaBtn"); if(d) d.href = CONFIG.instagramUrl;
 
-  $("#emailText").textContent = CONFIG.email;
-  $("#discordText").textContent = CONFIG.discord;
+  const e = $("#emailText"); if(e) e.textContent = CONFIG.email;
+  const f = $("#discordText"); if(f) f.textContent = CONFIG.discord;
 
   document.title = `${CONFIG.name} | Tokyo Ghoul Portfolio`;
 }
 
-function setYear(){ $("#year").textContent = new Date().getFullYear(); }
+function setYear(){ const y = $("#year"); if(y) y.textContent = new Date().getFullYear(); }
 
 function toast(msg){
   const el = $("#copyToast");
+  if(!el) return;
   el.textContent = msg;
   clearTimeout(window.__toastTimer);
   window.__toastTimer = setTimeout(()=>{ el.textContent=""; }, 1800);
@@ -49,12 +41,10 @@ async function copyToClipboard(text){
 }
 
 function bindCopy(){
-  $("#copyEmailBtn").addEventListener("click", async ()=>{
-    toast((await copyToClipboard(CONFIG.email)) ? "Email copied ✓" : "Copy failed");
-  });
-  $("#copyDiscordBtn").addEventListener("click", async ()=>{
-    toast((await copyToClipboard(CONFIG.discord)) ? "Discord copied ✓" : "Copy failed");
-  });
+  const a = $("#copyEmailBtn");
+  if(a) a.addEventListener("click", async ()=>{ toast((await copyToClipboard(CONFIG.email)) ? "Email copied ✓" : "Copy failed"); });
+  const b = $("#copyDiscordBtn");
+  if(b) b.addEventListener("click", async ()=>{ toast((await copyToClipboard(CONFIG.discord)) ? "Discord copied ✓" : "Copy failed"); });
 }
 
 function bindSmoothScroll(){
@@ -71,6 +61,7 @@ function bindSmoothScroll(){
 
 function bindFxToggle(){
   const btn = $("#fxBtn");
+  if(!btn) return;
   let on = true;
   const apply = () => {
     document.documentElement.style.setProperty("--fxOn", on ? "1" : "0");
@@ -82,24 +73,23 @@ function bindFxToggle(){
 }
 
 function bindContactForm(){
-  $("#contactForm").addEventListener("submit", (e)=>{
+  const f = $("#contactForm");
+  if(!f) return;
+  f.addEventListener("submit", (e)=>{
     e.preventDefault();
     const data = new FormData(e.target);
     const name = (data.get("name") || "Someone").toString().trim();
     const message = (data.get("message") || "").toString().trim();
-
     const subject = encodeURIComponent(`Website contact from ${name}`);
     const body = encodeURIComponent(message);
-
     window.location.href = `mailto:${CONFIG.email}?subject=${subject}&body=${body}`;
   });
 }
 
-/* Instagram embeds */
 function renderInstagramEmbeds(){
   const grid = $("#instaGrid");
+  if(!grid) return;
   if(!CONFIG.instaPosts || CONFIG.instaPosts.length === 0) return;
-
   grid.innerHTML = "";
   for(const url of CONFIG.instaPosts){
     const wrap = document.createElement("div");
@@ -123,17 +113,18 @@ function refreshInstagramEmbeds(){
 }
 
 function bindEmbedRefresh(){
-  $("#refreshEmbedsBtn").addEventListener("click", ()=>{
+  const b = $("#refreshEmbedsBtn");
+  if(!b) return;
+  b.addEventListener("click", ()=>{
     refreshInstagramEmbeds();
     toast("Embeds refreshed ✓");
   });
 }
 
-/* GitHub */
 async function fetchRepos(){
   const status = $("#statusText");
   try{
-    status.textContent = "Fetching GitHub…";
+    if(status) status.textContent = "Fetching GitHub…";
     const res = await fetch(`https://api.github.com/users/${CONFIG.githubUser}/repos?per_page=100&sort=updated`);
     if(!res.ok) throw new Error(`GitHub API error: ${res.status}`);
     const repos = await res.json();
@@ -149,15 +140,16 @@ async function fetchRepos(){
         updated: r.updated_at
       }));
 
-    status.textContent = "GitHub loaded ✓";
-    $("#githubNote").textContent = "";
+    if(status) status.textContent = "GitHub loaded ✓";
+    const note = $("#githubNote"); if(note) note.textContent = "";
 
     initRepoUI(list);
     updateStats(list);
   }catch(e){
-    status.textContent = "GitHub unavailable";
-    $("#githubNote").textContent = "GitHub API can rate-limit — refresh later if it fails.";
-    $("#repoList").innerHTML = `<div class="card">Could not load repos. ${escapeHtml(String(e.message))}</div>`;
+    if(status) status.textContent = "GitHub unavailable";
+    const note = $("#githubNote"); if(note) note.textContent = "GitHub API can rate-limit — refresh later if it fails.";
+    const wrap = $("#repoList");
+    if(wrap) wrap.innerHTML = `<div class="card">Could not load repos. ${escapeHtml(String(e.message))}</div>`;
   }
 }
 
@@ -171,13 +163,14 @@ function updateStats(repos){
   });
   const topLangs = Object.entries(langs).sort((a,b)=>b[1]-a[1]).slice(0,3).map(x=>x[0]);
 
-  $("#repoCount").textContent = shown.length;
-  $("#starCount").textContent = stars;
-  $("#langCount").textContent = topLangs.length ? topLangs.join(", ") : "—";
+  const a = $("#repoCount"); if(a) a.textContent = shown.length;
+  const b = $("#starCount"); if(b) b.textContent = stars;
+  const c = $("#langCount"); if(c) c.textContent = topLangs.length ? topLangs.join(", ") : "—";
 }
 
 function renderRepos(list){
   const wrap = $("#repoList");
+  if(!wrap) return;
   if(!list.length){
     wrap.innerHTML = `<div class="card">No repos matched your search.</div>`;
     return;
@@ -200,6 +193,10 @@ function renderRepos(list){
 function initRepoUI(repos){
   const search = $("#repoSearch");
   const sort = $("#repoSort");
+  if(!search || !sort){
+    renderRepos(repos);
+    return;
+  }
   let state = { q:"", sort:"updated" };
 
   const apply = () => {
@@ -230,132 +227,17 @@ function formatDate(iso){
   }catch{ return "—"; }
 }
 
-/* Background crimson shards */
 function initBackground(){
   const canvas = $("#bg");
-  const ctx = canvas.getContext("2d");
-  let w, h, dpr;
+  if(!canvas) return;
+  const ctx = canvas.getContext("2d", { alpha: true });
+  const DPR = Math.min(window.devicePixelRatio || 1, 2);
 
+  let w = 0, h = 0;
   const rand = (min, max) => Math.random() * (max - min) + min;
 
-  const resize = () => {
-    dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
-    w = canvas.width = Math.floor(window.innerWidth * dpr);
-    h = canvas.height = Math.floor(window.innerHeight * dpr);
-    canvas.style.width = window.innerWidth + "px";
-    canvas.style.height = window.innerHeight + "px";
-  };
-
-  const count = Math.max(48, Math.min(120, Math.floor((window.innerWidth * window.innerHeight) / 16000)));
-  const shards = Array.from({ length: count }, () => ({
-    x: rand(0,1), y: rand(0,1),
-    vx: rand(-0.00025, 0.00025),
-    vy: rand(-0.00018, 0.00018),
-    s: rand(0.6, 1.6),
-    a: rand(0, Math.PI * 2),
-    va: rand(-0.005, 0.005)
-  }));
-
-  const mouse = { x: 0.5, y: 0.5, active: false };
-  window.addEventListener("mousemove", (e)=>{
-    mouse.x = e.clientX / window.innerWidth;
-    mouse.y = e.clientY / window.innerHeight;
-    mouse.active = true;
-  });
-  window.addEventListener("mouseleave", ()=> mouse.active = false);
-
-  function drawShard(p){
-    const px = p.x * w;
-    const py = p.y * h;
-    const size = 18 * p.s * dpr;
-    const fxOn = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--fxOn")) || 1;
-
-    ctx.save();
-    ctx.translate(px, py);
-    ctx.rotate(p.a);
-
-    ctx.beginPath();
-    ctx.moveTo(-size * 0.9, -size * 0.25);
-    ctx.lineTo(size, 0);
-    ctx.lineTo(-size * 0.8, size * 0.35);
-    ctx.closePath();
-
-    const grad = ctx.createLinearGradient(-size, 0, size, 0);
-    grad.addColorStop(0, `rgba(255,42,63,${0.02 + 0.08 * fxOn})`);
-    grad.addColorStop(0.55, `rgba(255,20,60,${0.05 + 0.18 * fxOn})`);
-    grad.addColorStop(1, `rgba(176,0,28,${0.03 + 0.12 * fxOn})`);
-
-    ctx.fillStyle = grad;
-    ctx.fill();
-
-    ctx.strokeStyle = `rgba(255,255,255,${0.03 + 0.04 * fxOn})`;
-    ctx.lineWidth = 1 * dpr;
-    ctx.stroke();
-
-    ctx.restore();
-  }
-
-  function step(){
-    ctx.clearRect(0,0,w,h);
-
-    const g = ctx.createRadialGradient(w*0.25, h*0.2, 0, w*0.25, h*0.2, w*0.9);
-    g.addColorStop(0, "rgba(255,42,63,0.12)");
-    g.addColorStop(1, "rgba(0,0,0,0)");
-    ctx.fillStyle = g;
-    ctx.fillRect(0,0,w,h);
-
-    for(const p of shards){
-      p.x += p.vx; p.y += p.vy; p.a += p.va;
-      if(mouse.active){
-        p.x += (mouse.x - p.x) * 0.00005;
-        p.y += (mouse.y - p.y) * 0.00005;
-      }
-      if(p.x < -0.05) p.x = 1.05;
-      if(p.x > 1.05) p.x = -0.05;
-      if(p.y < -0.05) p.y = 1.05;
-      if(p.y > 1.05) p.y = -0.05;
-
-      drawShard(p);
-    }
-
-    requestAnimationFrame(step);
-  }
-
-  resize();
-  window.addEventListener("resize", resize);
-  requestAnimationFrame(step);
-}
-
-function escapeHtml(str){
-  return String(str)
-    .replaceAll("&","&amp;")
-    .replaceAll("<","&lt;")
-    .replaceAll(">","&gt;")
-    .replaceAll('"',"&quot;")
-    .replaceAll("'","&#039;");
-}
-
-function init(){
-  setLinks();
-  setYear();
-  bindCopy();
-  bindSmoothScroll();
-  bindFxToggle();
-  bindContactForm();
-
-  initBackground();
-  fetchRepos();
-
-  renderInstagramEmbeds();
-  bindEmbedRefresh();
-
-  // process embeds when IG script is ready
-  let tries = 0;
-  const t = setInterval(()=>{
-    tries++;
-    refreshInstagramEmbeds();
-    if((window.instgrm && window.instgrm.Embeds) || tries > 12) clearInterval(t);
-  }, 700);
-}
-
-init();
+  function resize(){
+    w = Math.floor(window.innerWidth);
+    h = Math.floor(window.innerHeight);
+    canvas.width = Math.floor(w * DPR);
+    canvas.heig
