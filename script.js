@@ -19,7 +19,8 @@ function setLinks(){
   const d=$("#workInstaBtn"); if(d) d.href=CONFIG.instagramUrl;
   const e=$("#emailText"); if(e) e.textContent=CONFIG.email;
   const f=$("#discordText"); if(f) f.textContent=CONFIG.discord;
-  document.title=`${CONFIG.name} | Tokyo Ghoul Portfolio`;
+  document.title = `${CONFIG.name} | Smooth Operator`;
+
 }
 
 function setYear(){ const y = $("#year"); if(y) y.textContent = new Date().getFullYear(); }
@@ -453,3 +454,4 @@ if(menuBtn && navLinks){
     menuBtn.setAttribute("aria-expanded", navLinks.classList.contains("open"));
   });
 }
+
