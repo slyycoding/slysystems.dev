@@ -1,3 +1,4 @@
+// script.js (FULL UPDATED - logs contact form to Formspree instead of mailto)
 const CONFIG = {
   name: "Sly",
   instagramUrl: "https://www.instagram.com/sly.jpeg/",
@@ -20,7 +21,6 @@ function setLinks(){
   const e=$("#emailText"); if(e) e.textContent=CONFIG.email;
   const f=$("#discordText"); if(f) f.textContent=CONFIG.discord;
   document.title = `${CONFIG.name} | Smooth Operator`;
-
 }
 
 function setYear(){ const y = $("#year"); if(y) y.textContent = new Date().getFullYear(); }
@@ -70,17 +70,34 @@ function bindFxToggle(){
   apply();
 }
 
+/* ✅ UPDATED: sends to Formspree (logs message) */
 function bindContactForm(){
   const f = $("#contactForm");
   if(!f) return;
-  f.addEventListener("submit", (e)=>{
+
+  f.addEventListener("submit", async (e)=>{
     e.preventDefault();
-    const data = new FormData(e.target);
-    const name = (data.get("name") || "Someone").toString().trim();
-    const message = (data.get("message") || "").toString().trim();
-    const subject = encodeURIComponent(`Website contact from ${name}`);
-    const body = encodeURIComponent(message);
-    window.location.href = `mailto:${CONFIG.email}?subject=${subject}&body=${body}`;
+
+    const btn = f.querySelector('button[type="submit"]');
+    const original = btn ? btn.textContent : "";
+    if(btn){ btn.disabled = true; btn.textContent = "Sending…"; }
+
+    try{
+      const res = await fetch(f.action, {
+        method: "POST",
+        body: new FormData(f),
+        headers: { "Accept": "application/json" }
+      });
+
+      if(!res.ok) throw new Error("Send failed");
+
+      f.reset();
+      toast("Message sent ✓");
+    }catch{
+      toast("Send failed — try again");
+    }finally{
+      if(btn){ btn.disabled = false; btn.textContent = original; }
+    }
   });
 }
 
@@ -445,13 +462,6 @@ function init(){
 
 init();
 
-const menuBtn = document.getElementById("menuBtn");
-const navLinks = document.getElementById("navLinks");
 
-if(menuBtn && navLinks){
-  menuBtn.addEventListener("click", ()=>{
-    navLinks.classList.toggle("open");
-    menuBtn.setAttribute("aria-expanded", navLinks.classList.contains("open"));
-  });
-}
+
 
