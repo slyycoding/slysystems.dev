@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Apply Now | Sly Systems</title>
+  <title>Sly Systems | Web Design & Digital Services</title>
   <meta
     name="description"
-    content="Apply to get your business live with Sly Systems."
+    content="Sly Systems builds modern websites for tradies, service businesses, and local operators."
   />
   <meta name="theme-color" content="#8b0e16" />
 
@@ -17,14 +17,382 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="apply.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="apply-page">
-    <section class="apply-section">
-      <div class="apply-container">
-        <a href="/qualify" class="apply-back-btn">← Back</a>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#top" class="brand">
+        <span class="brand-mark">S</span>
+        <span class="brand-text">Sly Systems</span>
+      </a>
 
+      <nav class="desktop-nav">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+        ☰
+      </button>
+    </div>
+
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>
+            Clean, bold websites
+            <span>built to get attention</span>
+          </h1>
+          <p class="hero-text">
+            Sly Systems builds modern, high-impact websites for tradies,
+            service businesses, and local operators who want to look more
+            legitimate and convert better online.
+          </p>
+
+          <div class="hero-actions">
+            <a href="/qualify" class="btn btn-primary">See If You Qualify</a>
+            <a href="#pricing" class="btn btn-secondary">View Pricing</a>
+          </div>
+
+          <div class="hero-points">
+            <div class="hero-point">
+              <strong>Fast</strong>
+              <span>Responsive, clean layouts built properly</span>
+            </div>
+            <div class="hero-point">
+              <strong>Modern</strong>
+              <span>Premium visuals with a stronger brand feel</span>
+            </div>
+            <div class="hero-point">
+              <strong>Practical</strong>
+              <span>Simple websites made to capture leads</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h2>Websites that feel professional from the first click.</h2>
+          <p>
+            Perfect for trades, mobile services, maintenance businesses,
+            property services, clinics, gyms, and other service-based brands.
+          </p>
+
+          <ul class="hero-list">
+            <li>Modern one-page or multi-section websites</li>
+            <li>Mobile responsive on every screen</li>
+            <li>Lead capture and contact form setup</li>
+            <li>Clean layouts focused on trust and conversions</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Services</span>
+          <h2>What Sly Systems does</h2>
+          <p>
+            Straightforward web design for businesses that need to look sharper,
+            feel more credible, and perform properly online.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <h3>Website Design</h3>
+            <p>
+              Modern layouts with strong hierarchy, premium styling, and
+              messaging that feels current.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <h3>Landing Pages</h3>
+            <p>
+              Clean conversion-focused pages built to promote a service, offer,
+              or local business.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <h3>Business Websites</h3>
+            <p>
+              Professional websites for local operators, service businesses,
+              tradies, and growing brands.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <h3>Website Fixes</h3>
+            <p>
+              Layout issues, content updates, spacing problems,
+              responsiveness fixes, and design cleanups.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <h3>Brand Presentation</h3>
+            <p>
+              Stronger visual direction through better layout, sharper sections,
+              and cleaner typography.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <h3>Launch Support</h3>
+            <p>
+              Help getting your site online properly with the essentials
+              handled cleanly.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="about">
+      <div class="container about-grid">
+        <div>
+          <span class="section-tag">About</span>
+          <h2>Built with clarity, speed, and strong design.</h2>
+        </div>
+
+        <div class="about-copy">
+          <p>
+            Sly Systems is focused on websites that look sharp, load cleanly,
+            and present businesses in a more serious way.
+          </p>
+          <p>
+            The goal is simple: build digital work that feels modern, looks
+            premium, and helps people trust your brand faster.
+          </p>
+          <p>
+            No bloated mess. No overcomplicated process. Just clean execution
+            and strong visual impact.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Pricing</span>
+          <h2>Simple pricing</h2>
+          <p>No fluff. No confusing packages. Just clear offers.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="price-card featured">
+            <div class="price-card-top">
+              <div class="price-label">Most Popular</div>
+              <h3>Website Build</h3>
+
+              <div class="price-block">
+                <div class="price">$400</div>
+                <p class="price-sub">one-time</p>
+              </div>
+            </div>
+
+            <ul class="price-features">
+              <li>Custom modern website design</li>
+              <li>Responsive mobile-friendly layout</li>
+              <li>Contact section / form setup</li>
+              <li>Basic launch support</li>
+              <li>Small edits after delivery</li>
+            </ul>
+
+            <a href="#contact" class="btn btn-primary full price-btn">Enquire Now</a>
+          </article>
+
+          <article class="price-card">
+            <div class="price-card-top">
+              <div class="price-label price-label-ghost">Support</div>
+              <h3>Website Support</h3>
+
+              <div class="price-block">
+                <div class="price">$50</div>
+                <p class="price-sub">per hour</p>
+              </div>
+            </div>
+
+            <ul class="price-features">
+              <li>Fix layout and spacing issues</li>
+              <li>Update content and sections</li>
+              <li>Improve responsiveness</li>
+              <li>Clean up design problems</li>
+              <li>General site help</li>
+            </ul>
+
+            <a href="#contact" class="btn btn-secondary full price-btn">Get Help</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section how-section" id="how-it-works">
+      <div class="container">
+        <div class="how-shell">
+          <div class="how-grid">
+            <div class="how-copy">
+              <span class="section-tag">How It Works</span>
+              <h2>A simple process that gets you online fast.</h2>
+              <p>Apply by submitting your details.</p>
+              <p>
+                If you're a fit — we'll build a website for your business and get
+                you online in a matter of days.
+              </p>
+              <p>
+                You end up with something that looks clean, professional,
+                and actually makes your business feel legit.
+              </p>
+            </div>
+
+            <div class="how-steps">
+              <div class="how-step">
+                <div class="how-step-icon-wrap">
+                  <div class="how-step-icon">1</div>
+                  <div class="how-step-line"></div>
+                </div>
+                <div class="how-step-content">
+                  <h3>Apply for $0</h3>
+                  <p>Start with a quick application so we can see if you're a good fit.</p>
+                </div>
+              </div>
+
+              <div class="how-step">
+                <div class="how-step-icon-wrap">
+                  <div class="how-step-icon">2</div>
+                  <div class="how-step-line"></div>
+                </div>
+                <div class="how-step-content">
+                  <h3>Provide your biz details</h3>
+                  <p>Send through your business info, services, and anything you want on the site.</p>
+                </div>
+              </div>
+
+              <div class="how-step">
+                <div class="how-step-icon-wrap">
+                  <div class="how-step-icon">3</div>
+                </div>
+                <div class="how-step-content">
+                  <h3>Get your website</h3>
+                  <p>
+                    We put together a modern site that looks sharp, works on mobile,
+                    and helps you capture leads properly.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section">
+      <div class="container cta-box">
+        <div class="cta-content">
+          <span class="section-tag">Ready</span>
+          <h2>Need a website that actually looks serious?</h2>
+          <p>
+            Let’s build something cleaner, sharper, and more professional for
+            your brand.
+          </p>
+        </div>
+
+        <div class="cta-action">
+          <a href="/qualify" class="cta-button">
+            <span class="cta-button-text">See If You Qualify</span>
+            <span class="cta-button-subtext">Go to qualification page</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <span class="section-tag">Contact</span>
+          <h2>Let’s talk about your project</h2>
+          <p>
+            Fill in the form and I’ll get back to you. Replace the form action
+            below with your Formspree endpoint or your own backend handler.
+          </p>
+
+          <div class="contact-info">
+            <div>
+              <strong>Email</strong>
+              <span>you@example.com</span>
+            </div>
+            <div>
+              <strong>Based in</strong>
+              <span>Melbourne, Australia</span>
+            </div>
+          </div>
+        </div>
+
+        <form
+          id="contactForm"
+          class="contact-form"
+          action="https://formspree.io/f/your-form-id"
+          method="POST"
+        >
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required />
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your email" required />
+          </div>
+
+          <div class="form-row">
+            <label for="service">Service</label>
+            <input type="text" id="service" name="service" placeholder="What do you need?" />
+          </div>
+
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              placeholder="Tell me about your project"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary full">Send Message</button>
+          <p class="form-status" id="formStatus"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Sly Systems. All rights reserved.</p>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
 
