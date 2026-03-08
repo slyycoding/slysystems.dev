@@ -1,452 +1,397 @@
-<!-- index.html (FULL UPDATED) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T11JX0W42J"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-T11JX0W42J');
-  </script>
-
-  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="014dfee6-90a7-43a5-8a74-8150065046b3" type="text/javascript" async></script>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#05060a" />
-  <title>Sly | Smooth Operator</title>
-  <meta name="description" content="Sly — Smooth Operator." />
+  <title>Sly Systems | Web Design & Digital Services</title>
+  <meta
+    name="description"
+    content="Sly Systems builds modern websites for tradies, service businesses, and local operators."
+  />
+  <meta name="theme-color" content="#8b0e16" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
 
   <link rel="stylesheet" href="style.css" />
-  <style>
-    #bg{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
-    .film{position:fixed;inset:0;z-index:1;pointer-events:none}
-    .nav,.wrap{position:relative;z-index:2}
-  </style>
 </head>
-
 <body>
-  <canvas id="bg"></canvas>
-  <div class="film"></div>
-
-  <header class="nav">
-    <div class="nav__inner">
-      <!-- FIXED: no nested <a> -->
-      <a class="brand" href="#top" aria-label="Home">
-        <span class="brand__sigil" aria-hidden="true">
-          <img class="navLogo" src="assets/logosvg.svg" alt="Sly logo" />
-        </span>
-        <span class="brand__text">Sly Systems</span>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#top" class="brand">
+        <span class="brand-mark">S</span>
+        <span class="brand-text">Sly Systems</span>
       </a>
 
-      <nav class="links links--desktop">
+      <nav class="desktop-nav">
+        <a href="#services">Services</a>
         <a href="#about">About</a>
-        <a href="#links">Links</a>
         <a href="#pricing">Pricing</a>
-        <a href="#github">GitHub</a>
+        <a href="#how-it-works">How It Works</a>
         <a href="#contact">Contact</a>
       </nav>
 
-      <div class="navRight">
-        <button id="fxBtn" class="iconBtn" aria-label="Toggle FX">FX</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+        ☰
+      </button>
+    </div>
 
-        <details class="navMenu">
-          <summary class="iconBtn menuBtn" aria-label="Menu">☰</summary>
-          <div class="navMenu__panel">
-            <a href="#about">About</a>
-            <a href="#links">Links</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#github">GitHub</a>
-            <a href="#contact">Contact</a>
-          </div>
-        </details>
-      </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#contact">Contact</a>
     </div>
   </header>
 
-  <main id="top" class="wrap">
-    <section class="hero heroSimple">
-      <div class="hero__card">
-        <div class="pillRow">
-          <span class="pill">Digital Studio</span>
-          <span class="pill ghost">Web Systems & Design
-</span>
-        </div>
-
-        <h1 class="glitch" data-text="Sly">Sly Systems</h1>
-
-        <p class="sub">
-          High-performance websites, clean UI, and professional digital systems — built to convert and scale
-          <span class="sub__thin">Designed for performance. Built for growth.</span>
-        </p>
-
-        <div class="ctaRow">
-          <a class="btn primary" href="#contact">Contact</a>
-          <a class="btn ghostBtn" href="#github">GitHub</a>
-          <a class="btn ghostBtn" href="#pricing">Pricing</a>
-        </div>
-
-        <div class="kaguneEdge" aria-hidden="true"></div>
-      </div>
-
-      <div class="hero__mini">
-        <div class="card miniStats">
-          <div class="stat">
-            <span class="stat__num" id="repoCount">—</span>
-            <span class="stat__label">Repos shown</span>
-          </div>
-          <div class="stat">
-            <span class="stat__num" id="starCount">—</span>
-            <span class="stat__label">Total stars</span>
-          </div>
-          <div class="stat">
-            <span class="stat__num" id="langCount">—</span>
-            <span class="stat__label">Top langs</span>
-          </div>
-
-          <div class="statusRow">
-            <span class="pulse"></span>
-            <span id="statusText" class="muted">Loading GitHub…</span>
-          </div>
-          <p class="muted small" id="githubNote"></p>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="section">
-      <div class="sectionHead">
-        <h2>Sly Systems</h2>
-        <p class="muted">The Studio Behind the work.</p>
-      </div>
-
-      <div class="aboutGrid">
-        <div class="card">
-          <h3 class="cardTitle">Who We Are</h3>
-
-          <p class="muted">
-            Sly Systems is an independent digital studio focused on modern websites, clean UI, and reliable technical builds.
-  We design and deploy fast, professional online systems for individuals, creators, and small businesses.
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>
+            Clean, bold websites
+            <span>built to get attention</span>
+          </h1>
+          <p class="hero-text">
+            Sly Systems builds modern, high-impact websites for tradies,
+            service businesses, and local operators who want to look more
+            legitimate and convert better online.
           </p>
 
-          <p class="muted">
-             Our work blends web development, design, and cybersecurity principles to ensure every project is not just good-looking —
-  but secure, stable, and built to last.
+          <div class="hero-actions">
+            <a href="qualify.html" class="btn btn-primary">See If You Qualify</a>
+            <a href="#pricing" class="btn btn-secondary">View Pricing</a>
+          </div>
+
+          <div class="hero-points">
+            <div class="hero-point">
+              <strong>Fast</strong>
+              <span>Responsive, clean layouts built properly</span>
+            </div>
+            <div class="hero-point">
+              <strong>Modern</strong>
+              <span>Premium visuals with a stronger brand feel</span>
+            </div>
+            <div class="hero-point">
+              <strong>Practical</strong>
+              <span>Simple websites made to capture leads</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h2>Websites that feel professional from the first click.</h2>
+          <p>
+            Perfect for trades, mobile services, maintenance businesses,
+            property services, clinics, gyms, and other service-based brands.
           </p>
 
-          <p class="muted">
-We partner with creators, startups, and small businesses to turn ideas into fully-deployed online systems — whether that’s a portfolio, a brand website, or a complete digital presence.          </p>
-
-          <p class="muted">
-Sly Systems operates with clarity, speed, and precision. We’re straight-up about what’s possible, focused on outcomes, and committed to delivering results that move brands forward — not just make things look nice.          </p>
-        </div>
-
-        <div class="card">
-          <h3 class="cardTitle">Our Services</h3>
-
-          <ul class="muted aboutList">
-            <li>Website design & front-end development — modern, responsive, and fast</li>
-            <li>UI & visual design — clean layouts, smooth interactions, strong branding</li>
-            <li>Custom website builds — portfolios, business sites, and landing pages</li>
-            <li>Performance & responsiveness optimization — built to look and feel great on any device</li>
-            <li>Hosting, domain & deployment setup — sites launched properly and kept running</li>
-            <li>Resume / CV formatting + polishing (ATS-friendly)</li>
-            <li>Website updates, fixes & improvements — layout tweaks, bug fixes, and content changes</li>
+          <ul class="hero-list">
+            <li>Modern one-page or multi-section websites</li>
+            <li>Mobile responsive on every screen</li>
+            <li>Lead capture and contact form setup</li>
+            <li>Clean layouts focused on trust and conversions</li>
           </ul>
-
-          <div class="divider"></div>
-          <p class="muted small">We Have Been doing this a long time, you'll be in good hands don't worry.</p>
         </div>
       </div>
     </section>
 
-    <section id="pricing" class="section">
-      <div class="sectionHead">
-        <h2>Pricing</h2>
-        <p class="muted">Simple, transparent, no bullshit.</p>
-      </div>
-
-      <!-- FIXED: wrap pricing cards in the grid -->
-      <div class="priceGrid">
-        <div class="priceCard highlight">
-          <h3>Web / Design</h3>
-          <p class="price">$400</p>
-          <p class="muted">one-time</p>
-          <ul>
-            <li>Full website design & development</li>
-            <li>Mobile-responsive & modern UI</li>
-            <li>Custom branding & layout</li>
-            <li>Website deployed & live for you</li>
-            <li>Hosting setup included</li>
-            <li>24/7 support during build</li>
-            <li>3 weeks of post-launch management</li>
-            <li>Bug fixes & small edits included</li>
-          </ul>
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Services</span>
+          <h2>What Sly Systems does</h2>
+          <p>
+            Straightforward web design for businesses that need to look sharper,
+            feel more credible, and perform properly online.
+          </p>
         </div>
 
-        <div class="priceCard highlight">
-          <h3>Website Support</h3>
-          <p class="price">$50</p>
-          <p class="muted">per hour</p>
-          <ul>
-            <li>Website troubleshooting</li>
-            <li>Design, layout & content fixes</li>
-            <li>Hosting, domain & email support</li>
-            <li>Bug fixes & performance issues</li>
-            <li>Remote or on-site</li>
-          </ul>
+        <div class="service-grid">
+          <article class="service-card">
+            <h3>Website Design</h3>
+            <p>
+              Modern layouts with strong hierarchy, premium styling, and
+              messaging that feels current.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <h3>Landing Pages</h3>
+            <p>
+              Clean conversion-focused pages built to promote a service, offer,
+              or local business.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <h3>Business Websites</h3>
+            <p>
+              Professional websites for local operators, service businesses,
+              tradies, and growing brands.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <h3>Website Fixes</h3>
+            <p>
+              Layout issues, content updates, spacing problems,
+              responsiveness fixes, and design cleanups.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <h3>Brand Presentation</h3>
+            <p>
+              Stronger visual direction through better layout, sharper sections,
+              and cleaner typography.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <h3>Launch Support</h3>
+            <p>
+              Help getting your site online properly with the essentials
+              handled cleanly.
+            </p>
+          </article>
         </div>
-
-
       </div>
     </section>
-    <section id="package" class="section">
-  <div class="sectionHead row">
-    <div>
-      <h2>What’s Included</h2>
-      <p class="muted">Built for service businesses — clean, fast, and conversion-focused.</p>
-    </div>
-  </div>
 
-  <div class="pkg">
-    
-   
-  
-    </div>
-
-    <div class="pkgBody card">
-      <h3 class="pkgTitle">What’s Included in Your Website Package</h3>
-      <p class="muted pkgSub">
-        Here’s exactly what’s part of your site — and what’s not. Simple scope, fast delivery, zero surprises.
-      </p>
-
-      <div class="pkgLists">
+    <section class="section section-dark" id="about">
+      <div class="container about-grid">
         <div>
-          <div class="pkgLabel">Included</div>
-          <ul class="pkgList">
-            <li class="ok">Modern 1-page site (scrollable homepage)</li>
-            <li class="ok">Mobile-responsive build (perfect on phone + desktop)</li>
-            <li class="ok">SEO foundations (titles, structure, indexing-ready)</li>
-            <li class="ok">Contact form that logs directly to you</li>
-            <li class="ok">Speed & performance optimization</li>
-            <li class="ok">Deploy + hosting setup (live and working)</li>
-            <li class="ok">Basic security hardening (spam protection + safe defaults)</li>
-            <li class="ok">Free redesign once per year (same scope)</li>
-          </ul>
+          <span class="section-tag">About</span>
+          <h2>Built with clarity, speed, and strong design.</h2>
         </div>
 
-        <div>
-          <div class="pkgLabel">Not included (by design)</div>
-          <ul class="pkgList">
-            <li class="no">eCommerce / online store</li>
-            <li class="no">Payment portals</li>
-            <li class="no">On-page booking systems</li>
-            <li class="no">Complex web apps / dashboards</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="pkgNote">
-        <span class="pkgNoteDot"></span>
-        <p class="muted">
-          Want bookings, payments, or a multi-page site? We can upgrade the scope — you’ll get a clear quote first.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section trust">
-  <div class="sectionHead center">
-    <h2>You’re Covered — From Day One</h2>
-    <p class="muted">
-      Whether you found us through a referral, a search, or just discovered Sly Systems — you’re in safe hands.
-    </p>
-  </div>
-
-  <div class="trustGrid">
-    <div class="trustCard">
-      <div class="trustIcon">🏆</div>
-      <h3>Proven Delivery</h3>
-      <p class="muted">
-        We build and launch real websites for real businesses — fast, reliable, and ready to convert.
-      </p>
-    </div>
-
-    <div class="trustCard">
-      <div class="trustIcon">💳</div>
-      <h3>Transparent Pricing</h3>
-      <p class="muted">
-        Clear pricing. No hidden fees. You always know what you’re paying for.
-      </p>
-    </div>
-
-    <div class="trustCard">
-      <div class="trustIcon">🇦🇺</div>
-      <h3>Australian Hosting</h3>
-      <p class="muted">
-        Hosted on fast, secure Australian servers for reliability, speed, and compliance.
-      </p>
-    </div>
-  </div>
-</section>
-
-  
-
-    
-<section id="faq" class="section">
-  <div class="sectionHead center">
-    <h2>Frequently Asked Questions</h2>
-    <p class="muted">Quick answers — no back and forth.</p>
-  </div>
-
-  <div class="faqWrap">
-    <div class="faq">
-      <details class="faqItem">
-        <summary>
-          <span>This sounds cheap — what’s the catch?</span>
-          <span class="faqIcon" aria-hidden="true"></span>
-        </summary>
-        <div class="faqBody">
-          <p class="muted">
-            No catch. We keep the package simple: a clean, high-performance website built to convert.
-            Fewer moving parts = faster delivery, better reliability, and lower cost.
+        <div class="about-copy">
+          <p>
+            Sly Systems is focused on websites that look sharp, load cleanly,
+            and present businesses in a more serious way.
           </p>
-    </details>
-
-    <details class="faqItem">
-      <summary>
-        <span>Do you guys do SEO?</span>
-        <span class="faqIcon" aria-hidden="true"></span>
-      </summary>
-      <div class="faqBody">
-        <p class="muted">
-          We include SEO foundations: proper headings, metadata, clean structure, and mobile performance.
-          Full SEO campaigns can be added later if needed.
-        </p>
+          <p>
+            The goal is simple: build digital work that feels modern, looks
+            premium, and helps people trust your brand faster.
+          </p>
+          <p>
+            No bloated mess. No overcomplicated process. Just clean execution
+            and strong visual impact.
+          </p>
+        </div>
       </div>
-    </details>
+    </section>
 
-    <details class="faqItem">
-      <summary>
-        <span>Will my website attract leads and customers?</span>
-        <span class="faqIcon" aria-hidden="true"></span>
-      </summary>
-      <div class="faqBody">
-        <p class="muted">
-          We build with conversion in mind: clear messaging, strong layout, and an obvious path to contact you.
-          Results also depend on your offer and traffic — but the website won’t be the weak link.
-        </p>
-      </div>
-    </details>
-
-    <details class="faqItem">
-      <summary>
-        <span>How long does it take?</span>
-        <span class="faqIcon" aria-hidden="true"></span>
-      </summary>
-      <div class="faqBody">
-        <p class="muted">
-          Most single-page builds are delivered fast once content is ready (logo, services, photos, contact details).
-          If you’re missing content, we can help structure it.
-        </p>
-      </div>
-    </details>
-
-    <details class="faqItem">
-      <summary>
-        <span>What if I want more pages later?</span>
-        <span class="faqIcon" aria-hidden="true"></span>
-      </summary>
-      <div class="faqBody">
-        <p class="muted">
-          No problem — we can expand the site into multiple pages (services, gallery, testimonials, etc.)
-          and keep everything consistent with your brand.
-        </p>
-      </div>
-    </details>
-
-    <details class="faqItem">
-      <summary>
-        <span>What type of business is this offer best for?</span>
-        <span class="faqIcon" aria-hidden="true"></span>
-      </summary>
-      <div class="faqBody">
-        <p class="muted">
-          Service businesses: tradies, salons, fitness coaches, freelancers, clinics, cafes, and local brands
-          that need a clean online presence and a contact funnel.
-        </p>
-      </div>
-    </details>
-  </div>
-</section>
-
-
-    <section id="contact" class="section">
-      <div class="sectionHead">
-        <h2>Contact</h2>
-        <p class="muted">Copy details or send a message (it gets logged).</p>
-      </div>
-
-      <div class="contactGrid">
-        <div class="card">
-          <h3 class="cardTitle">Quick Copy</h3>
-
-          <button class="copyRow" id="copyEmailBtn" type="button">
-            <span class="copyRow__label">Email</span>
-            <span class="copyRow__value mono" id="emailText">—</span>
-            <span class="copyRow__action">Copy</span>
-          </button>
-
-          <button class="copyRow" id="copyDiscordBtn" type="button">
-            <span class="copyRow__label">Discord</span>
-            <span class="copyRow__value mono" id="discordText">—</span>
-            <span class="copyRow__action">Copy</span>
-          </button>
-
-          <p class="muted small" id="copyToast" aria-live="polite"></p>
-
-          <div class="divider"></div>
-          <p class="muted small">Here are the best ways to contact me :D</p>
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Pricing</span>
+          <h2>Simple pricing</h2>
+          <p>No fluff. No confusing packages. Just clear offers.</p>
         </div>
 
-        <!-- FORM: logs to Formspree -->
-        <form class="card form" id="contactForm" action="https://formspree.io/f/mlggdald" method="POST">
-          <h3 class="cardTitle">Message</h3>
+        <div class="pricing-grid">
+          <article class="price-card featured">
+            <div class="price-card-top">
+              <div class="price-label">Most Popular</div>
+              <h3>Website Build</h3>
 
-          <input type="hidden" name="_subject" value="New message from slysystems.dev">
-          <input type="hidden" name="_format" value="plain">
-          <input type="text" name="_gotcha" style="display:none">
+              <div class="price-block">
+                <div class="price">$400</div>
+                <p class="price-sub">one-time</p>
+              </div>
+            </div>
 
-          <label>
-            <span>Your email</span>
-            <input class="input" type="email" name="email" placeholder="you@gmail.com" required />
-          </label>
+            <ul class="price-features">
+              <li>Custom modern website design</li>
+              <li>Responsive mobile-friendly layout</li>
+              <li>Contact section / form setup</li>
+              <li>Basic launch support</li>
+              <li>Small edits after delivery</li>
+            </ul>
 
-          <label>
-            <span>Your message</span>
-            <textarea class="input" name="message" rows="6" placeholder="Tell me what you need…" required></textarea>
-          </label>
+            <a href="#contact" class="btn btn-primary full price-btn">Enquire Now</a>
+          </article>
 
-          <button class="btn primary" type="submit">Send Message</button>
-          <p class="muted small">This sends directly to me and gets logged.</p>
+          <article class="price-card">
+            <div class="price-card-top">
+              <div class="price-label price-label-ghost">Support</div>
+              <h3>Website Support</h3>
+
+              <div class="price-block">
+                <div class="price">$50</div>
+                <p class="price-sub">per hour</p>
+              </div>
+            </div>
+
+            <ul class="price-features">
+              <li>Fix layout and spacing issues</li>
+              <li>Update content and sections</li>
+              <li>Improve responsiveness</li>
+              <li>Clean up design problems</li>
+              <li>General site help</li>
+            </ul>
+
+            <a href="#contact" class="btn btn-secondary full price-btn">Get Help</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section how-section" id="how-it-works">
+      <div class="container">
+        <div class="how-shell">
+          <div class="how-grid">
+            <div class="how-copy">
+              <span class="section-tag">How It Works</span>
+              <h2>A simple process that gets you online fast.</h2>
+              <p>Apply by submitting your details.</p>
+              <p>
+                If you're a fit — we'll build a website for your business and get
+                you online in a matter of days.
+              </p>
+              <p>
+                You end up with something that looks clean, professional,
+                and actually makes your business feel legit.
+              </p>
+            </div>
+
+            <div class="how-steps">
+              <div class="how-step">
+                <div class="how-step-icon-wrap">
+                  <div class="how-step-icon">1</div>
+                  <div class="how-step-line"></div>
+                </div>
+                <div class="how-step-content">
+                  <h3>Apply for $0</h3>
+                  <p>Start with a quick application so we can see if you're a good fit.</p>
+                </div>
+              </div>
+
+              <div class="how-step">
+                <div class="how-step-icon-wrap">
+                  <div class="how-step-icon">2</div>
+                  <div class="how-step-line"></div>
+                </div>
+                <div class="how-step-content">
+                  <h3>Provide your biz details</h3>
+                  <p>Send through your business info, services, and anything you want on the site.</p>
+                </div>
+              </div>
+
+              <div class="how-step">
+                <div class="how-step-icon-wrap">
+                  <div class="how-step-icon">3</div>
+                </div>
+                <div class="how-step-content">
+                  <h3>Get your website</h3>
+                  <p>
+                    We put together a modern site that looks sharp, works on mobile,
+                    and helps you capture leads properly.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section">
+      <div class="container cta-box">
+        <div class="cta-content">
+          <span class="section-tag">Ready</span>
+          <h2>Need a website that actually looks serious?</h2>
+          <p>
+            Let’s build something cleaner, sharper, and more professional for
+            your brand.
+          </p>
+        </div>
+
+        <div class="cta-action">
+          <a href="qualify.html" class="cta-button">
+            <span class="cta-button-text">See If You Qualify</span>
+            <span class="cta-button-subtext">Go to qualification page</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <span class="section-tag">Contact</span>
+          <h2>Let’s talk about your project</h2>
+          <p>
+            Fill in the form and I’ll get back to you. Replace the form action
+            below with your Formspree endpoint or your own backend handler.
+          </p>
+
+          <div class="contact-info">
+            <div>
+              <strong>Email</strong>
+              <span>you@example.com</span>
+            </div>
+            <div>
+              <strong>Based in</strong>
+              <span>Melbourne, Australia</span>
+            </div>
+          </div>
+        </div>
+
+        <form
+          id="contactForm"
+          class="contact-form"
+          action="https://formspree.io/f/your-form-id"
+          method="POST"
+        >
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required />
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your email" required />
+          </div>
+
+          <div class="form-row">
+            <label for="service">Service</label>
+            <input type="text" id="service" name="service" placeholder="What do you need?" />
+          </div>
+
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              placeholder="Tell me about your project"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary full">Send Message</button>
+          <p class="form-status" id="formStatus"></p>
         </form>
       </div>
     </section>
-
-    <footer class="footer">
-      <p class="muted">© <span id="year"></span> Sly</p>
-      <a class="muted small" href="#top">Back to top ↑</a>
-    </footer>
   </main>
 
-  <script async src="https://www.instagram.com/embed.js"></script>
-  <script src="script.js" defer></script>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Sly Systems. All rights reserved.</p>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
 
