@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apply Now | Sly Systems</title>
+  <meta
+    name="description"
+    content="Apply to get your business live with Sly Systems."
+  />
+  <meta name="theme-color" content="#8b0e16" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="apply.css" />
+</head>
+<body>
+  <main class="apply-page">
+    <section class="apply-section">
+      <div class="apply-container">
+        <a href="qualify.html" class="apply-back-btn">← Back</a>
+
+        <div class="apply-shell">
+          <div class="apply-topbar">
+            <span>0% Completed</span>
+            <span>Fields Completed 0 / 7</span>
+          </div>
+
+          <div class="apply-header">
+            <span class="apply-tag">Sly Systems</span>
+            <h1>Apply to Get Your Business Live</h1>
+            <p>
+              For approved registered businesses, the setup fee can be waived.
+            </p>
+          </div>
+
+          <div class="apply-alert">
+            <span class="apply-alert-icon">⚠</span>
+            <p>
+              We review every application. Fake details, missing ABN, or invalid
+              submissions are automatically rejected without response.
+            </p>
+          </div>
+
+          <form class="apply-form" id="applyForm">
+            <div class="apply-grid">
+              <div class="apply-field">
+                <label for="fullName">Your Name <span>*</span></label>
+                <input type="text" id="fullName" name="fullName" placeholder="Your full name" required />
+              </div>
+
+              <div class="apply-field">
+                <label for="mobile">Mobile Number <span>*</span></label>
+                <input type="tel" id="mobile" name="mobile" placeholder="04xx xxx xxx" required />
+              </div>
+
+              <div class="apply-field">
+                <label for="abn">Enter your ABN (11 digits) <span>*</span></label>
+                <input
+                  type="text"
+                  id="abn"
+                  name="abn"
+                  inputmode="numeric"
+                  maxlength="11"
+                  placeholder="12345678901"
+                  required
+                />
+                <small>Invalid or unverifiable ABNs are automatically rejected.</small>
+              </div>
+
+              <div class="apply-field">
+                <label for="businessName">Business Name <span>*</span></label>
+                <input type="text" id="businessName" name="businessName" placeholder="Your business name" required />
+              </div>
+
+              <div class="apply-field">
+                <label for="businessEmail">Business Email Address <span>*</span></label>
+                <input type="email" id="businessEmail" name="businessEmail" placeholder="name@business.com" required />
+              </div>
+
+              <div class="apply-field">
+                <label for="industry">Industry / Service <span>*</span></label>
+                <input type="text" id="industry" name="industry" placeholder="e.g. Plumbing, Cleaning, Automotive" required />
+              </div>
+            </div>
+
+            <div class="apply-field apply-field-full">
+              <label for="details">What do you need the website for?</label>
+              <textarea
+                id="details"
+                name="details"
+                rows="5"
+                placeholder="Tell us what your business does, what pages you need, and what you want people to do on the site."
+              ></textarea>
+            </div>
+
+            <div class="apply-field apply-field-full">
+              <label>How soon do you need the website live?</label>
+              <div class="apply-options">
+                <label class="apply-option">
+                  <input type="radio" name="timeline" value="ASAP / this month" />
+                  <span>ASAP / this month</span>
+                </label>
+
+                <label class="apply-option">
+                  <input type="radio" name="timeline" value="1–2 months" />
+                  <span>1–2 months</span>
+                </label>
+
+                <label class="apply-option">
+                  <input type="radio" name="timeline" value="Just looking around" />
+                  <span>Just looking around</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="apply-actions">
+              <button type="button" class="apply-btn apply-btn-secondary" id="saveDraftBtn">
+                Save
+              </button>
+              <button type="submit" class="apply-btn apply-btn-primary">
+                Submit Application
+              </button>
+            </div>
+
+            <p class="apply-status" id="applyStatus"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="apply.js"></script>
+</body>
+</html>
