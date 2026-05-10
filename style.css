@@ -1266,11 +1266,10 @@ img { display: block; max-width: 100%; }
 /* ════════════════════════════════════════════════════════════
    NAV LOGO
    ════════════════════════════════════════════════════════════ */
-.brand-logo {
-  height: 44px;
+.brand-logo-svg {
+  height: 32px;
   width: auto;
   display: block;
-  mix-blend-mode: screen;
 }
 
 /* ════════════════════════════════════════════════════════════
