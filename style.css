@@ -836,6 +836,86 @@ img { display: block; max-width: 100%; }
 }
 
 /* ════════════════════════════════════════════════════════════
+   WORK / PORTFOLIO
+   ════════════════════════════════════════════════════════════ */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 2rem;
+}
+.work-card {
+  background: var(--surface);
+  border: 1px solid var(--outline-var);
+  border-top: 3px solid var(--accent, var(--primary-cta));
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+.work-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4),
+              0 0 0 1px var(--accent, var(--primary-cta)) inset;
+}
+.work-preview {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #0a0a0a;
+  border-bottom: 1px solid var(--outline-var);
+}
+.work-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.5s var(--ease);
+}
+.work-card:hover .work-preview img {
+  transform: scale(1.03);
+}
+.work-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  flex: 1;
+}
+.work-meta {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.work-tag {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: var(--r);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--outline-var);
+  color: var(--muted);
+}
+.work-info .headline-sm {
+  margin-top: 0.1rem;
+}
+.work-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--accent, var(--primary-cta));
+  margin-top: auto;
+  padding-top: 0.75rem;
+  transition: gap 0.2s var(--ease);
+}
+.work-link:hover { gap: 0.55rem; }
+
+/* ════════════════════════════════════════════════════════════
    RESPONSIVE
    ════════════════════════════════════════════════════════════ */
 @media (max-width: 1024px) {
@@ -857,6 +937,7 @@ img { display: block; max-width: 100%; }
 
 @media (max-width: 640px) {
   :root { --section-gap: 5rem; }
+  .work-grid      { grid-template-columns: 1fr; }
   .services-grid  { grid-template-columns: 1fr 1fr; }
   .bento-cards    { grid-template-columns: 1fr; }
   .hero-stats     { flex-direction: column; width: 100%; max-width: 260px; }
