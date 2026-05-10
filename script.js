@@ -113,6 +113,28 @@ if (form && status) {
   });
 }
 
+/* ─── FAQ accordion ─────────────────────────────────────────── */
+document.querySelectorAll('.faq-trigger').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item   = btn.closest('.faq-item');
+    const body   = item.querySelector('.faq-body');
+    const inner  = item.querySelector('.faq-body-inner');
+    const isOpen = item.classList.contains('open');
+
+    document.querySelectorAll('.faq-item.open').forEach(el => {
+      el.classList.remove('open');
+      el.querySelector('.faq-body').style.height = '0';
+      el.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+    });
+
+    if (!isOpen) {
+      item.classList.add('open');
+      body.style.height = inner.offsetHeight + 'px';
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
 /* ─── Smooth scroll with header offset ──────────────────────── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
