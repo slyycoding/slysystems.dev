@@ -1358,6 +1358,13 @@ img { display: block; max-width: 100%; }
 }
 .footer-link:hover { color: var(--on-surface); }
 .footer-link:hover::after { width: 100%; }
+.footer-contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.footer-contact-link svg { flex-shrink: 0; opacity: 0.5; }
+.footer-contact-link:hover svg { opacity: 1; color: var(--primary-cta); }
 .footer-cta-link {
   color: var(--primary-cta);
   font-weight: 600;
