@@ -526,15 +526,22 @@ img { display: block; max-width: 100%; }
   transform: translateY(-4px);
   border-color: rgba(255, 255, 255, 0.14);
 }
-.card-icon {
-  display: block;
-  width: 32px;
-  height: 32px;
-  margin-bottom: 1rem;
+.card-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(255, 42, 63, 0.08);
+  border: 1px solid rgba(255, 42, 63, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  transition: background 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease);
 }
-.card-icon svg {
-  width: 32px;
-  height: 32px;
+.glass-card:hover .card-icon-wrap {
+  background: rgba(255, 42, 63, 0.15);
+  border-color: rgba(255, 42, 63, 0.35);
+  box-shadow: 0 0 20px rgba(255, 42, 63, 0.2);
 }
 
 /* ════════════════════════════════════════════════════════════
@@ -1271,17 +1278,17 @@ img { display: block; max-width: 100%; }
 /* ════════════════════════════════════════════════════════════
    NAV LOGO
    ════════════════════════════════════════════════════════════ */
-/* Nav logo — crop bottom text, blend black bg away */
+/* Nav logo */
 .brand-logo-wrap {
-  height: 40px;
-  width: 40px;
+  height: 42px;
+  width: 64px;
   overflow: hidden;
   flex-shrink: 0;
 }
 .brand-logo-img {
   display: block;
-  width: 53px;
-  height: 53px;
+  width: 64px;
+  height: 64px;
   object-fit: cover;
   object-position: center top;
   mix-blend-mode: screen;
@@ -1289,14 +1296,14 @@ img { display: block; max-width: 100%; }
 
 /* Footer logo */
 .footer-logo-wrap {
-  height: 80px;
-  width: 80px;
+  height: 90px;
+  width: 136px;
   overflow: hidden;
 }
 .footer-logo-img {
   display: block;
-  width: 105px;
-  height: 105px;
+  width: 136px;
+  height: 136px;
   object-fit: cover;
   object-position: center top;
   mix-blend-mode: screen;
