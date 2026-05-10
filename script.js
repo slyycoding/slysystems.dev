@@ -115,8 +115,8 @@ if (form && status) {
 
 /* ─── Google Reviews ────────────────────────────────────────── */
 (async () => {
-  const GOOGLE_API_KEY = '';         // ← paste your Google Places API key here
-  const PLACE_ID       = '';         // ← paste your Place ID here (see below)
+  const GOOGLE_API_KEY = 'AIzaSyDiTdbPLk_MVlxNi9wAShw4XxRXQrNG_hw';
+  const PLACE_ID       = '';         // ← paste your Place ID here (starts with ChIJ...)
   // To find your Place ID:
   //   1. Go to https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder
   //   2. Search "Sly Systems Melbourne"
