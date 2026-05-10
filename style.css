@@ -944,7 +944,65 @@ img { display: block; max-width: 100%; }
   font-size: 0.7rem;
   color: var(--muted);
 }
-.review-placeholder { min-width: 100%; text-align: center; }
+.review-single {
+  max-width: 780px;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+}
+.review-card-full {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 2rem;
+  border-left: 3px solid var(--primary-cta);
+}
+.review-stars-lg {
+  font-size: 1.25rem;
+  letter-spacing: 0.06em;
+  color: #FBBC05;
+}
+.review-text-full {
+  font-size: 0.975rem;
+  line-height: 1.75;
+  color: var(--muted-hi);
+  font-style: italic;
+}
+.review-author-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--outline-var);
+}
+.review-avatar-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--secondary-container);
+  border: 1px solid var(--outline-var);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+.review-author-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--on-surface);
+}
+.review-author-meta {
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin-top: 1px;
+}
+.review-google-logo {
+  margin-left: auto;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
 .reviews-footer {
   display: flex;
   justify-content: center;
