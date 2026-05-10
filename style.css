@@ -1114,9 +1114,10 @@ img { display: block; max-width: 100%; }
   .faq-item       { width: 100%; }
   .services-grid  { grid-template-columns: 1fr 1fr; }
   .bento-cards    { grid-template-columns: 1fr; }
-  .hero-stats     { flex-direction: column; width: 100%; max-width: 260px; }
-  .hstat-div      { width: auto; height: 1px; align-self: stretch; }
-  .hstat          { padding: 0.75rem 2rem; }
+  .hero-stats     { width: 100%; }
+  .hstat          { padding: 0.65rem 0; flex: 1; }
+  .hstat-num      { font-size: 1.25rem; }
+  .hstat .label-mono { font-size: 0.55rem; }
   .hero-actions   { flex-direction: column; width: 100%; }
   .hero-actions .btn-primary,
   .hero-actions .btn-secondary { width: 100%; }
