@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sly Systems | Web Design for Real Businesses</title>
+  <meta name="description" content="Sly Systems builds modern, high-impact websites for tradies, service businesses, and local operators." />
+  <meta name="theme-color" content="#ff2a3f" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Noise texture overlay -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════ NAV ═══════════════════════ -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav-inner container-wide">
+      <a href="/" class="brand">Sly Systems</a>
+
+      <div class="desktop-nav">
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="#process" class="nav-link">Process</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+
+      <div class="nav-end">
+        <a href="/qualify" class="btn-cta">Start Project</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+      <a href="/qualify" class="mobile-cta">Start Project</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════ HERO ═══════════════════════ -->
+    <section class="hero" id="top">
+      <!-- Ambient glows — static, no animation -->
+      <div class="hero-glow hero-glow-1" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-2" aria-hidden="true"></div>
+
+      <div class="container hero-content">
+        <span class="label-chip reveal">Web Design Studio · Melbourne, AU</span>
+
+        <h1 class="display-lg reveal reveal-d1">
+          <span class="block">Sly Systems</span>
+          <span class="block text-crimson text-glow">Built to Look Serious.</span>
+        </h1>
+
+        <p class="body-lg text-muted hero-sub reveal reveal-d2">
+          Modern, high-impact websites for tradies, service businesses, and
+          local operators who need to look more legitimate and convert better online.
+        </p>
+
+        <div class="hero-actions reveal reveal-d3">
+          <a href="/qualify" class="btn-primary">See If You Qualify</a>
+          <a href="#pricing" class="btn-secondary">View Pricing</a>
+        </div>
+
+        <div class="hero-stats reveal reveal-d4">
+          <div class="hstat">
+            <span class="hstat-num">48h</span>
+            <span class="label-mono text-muted">Avg. turnaround</span>
+          </div>
+          <div class="hstat-div"></div>
+          <div class="hstat">
+            <span class="hstat-num">100%</span>
+            <span class="label-mono text-muted">Mobile ready</span>
+          </div>
+          <div class="hstat-div"></div>
+          <div class="hstat">
+            <span class="hstat-num">$400</span>
+            <span class="label-mono text-muted">Starting price</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ MARQUEE ═══════════════════════ -->
+    <div class="marquee-wrap" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Website Design</span><span class="mdot">·</span>
+        <span>Landing Pages</span><span class="mdot">·</span>
+        <span>Lead Capture</span><span class="mdot">·</span>
+        <span>Mobile Responsive</span><span class="mdot">·</span>
+        <span>Brand Presence</span><span class="mdot">·</span>
+        <span>Fast Launch</span><span class="mdot">·</span>
+        <span>Website Fixes</span><span class="mdot">·</span>
+        <span>Design Cleanups</span><span class="mdot">·</span>
+        <span>Website Design</span><span class="mdot">·</span>
+        <span>Landing Pages</span><span class="mdot">·</span>
+        <span>Lead Capture</span><span class="mdot">·</span>
+        <span>Mobile Responsive</span><span class="mdot">·</span>
+        <span>Brand Presence</span><span class="mdot">·</span>
+        <span>Fast Launch</span><span class="mdot">·</span>
+        <span>Website Fixes</span><span class="mdot">·</span>
+        <span>Design Cleanups</span><span class="mdot">·</span>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════ PHILOSOPHY / ABOUT ═══════════════════════ -->
+    <section class="section" id="about">
+      <div class="container-wide">
+        <div class="bento-grid">
+
+          <!-- Left: copy -->
+          <div class="bento-copy reveal">
+            <span class="label-chip">The Philosophy</span>
+            <h2 class="headline-md">Built with clarity,<br/>speed, and strong design.</h2>
+            <p class="body-md text-muted">
+              Sly Systems is focused on websites that look sharp, load cleanly,
+              and present businesses in a more serious way. No bloated mess.
+              No overcomplicated process. Just clean execution and strong visual impact.
+            </p>
+          </div>
+
+          <!-- Right: 2×2 glass cards -->
+          <div class="bento-cards">
+            <div class="glass-card reveal" style="--d:0ms">
+              <span class="card-icon" aria-hidden="true">⚡</span>
+              <h3 class="headline-sm">Performance</h3>
+              <p class="body-md text-muted">Fast, clean layouts built properly — no bloat, no slowdowns.</p>
+            </div>
+            <div class="glass-card reveal" style="--d:80ms">
+              <span class="card-icon" aria-hidden="true">🎯</span>
+              <h3 class="headline-sm">Conversion</h3>
+              <p class="body-md text-muted">Every element is designed to capture leads and build trust.</p>
+            </div>
+            <div class="glass-card reveal" style="--d:160ms">
+              <span class="card-icon" aria-hidden="true">💎</span>
+              <h3 class="headline-sm">Credibility</h3>
+              <p class="body-md text-muted">Premium visuals that make your business look more serious.</p>
+            </div>
+            <div class="glass-card reveal" style="--d:240ms">
+              <span class="card-icon" aria-hidden="true">🚀</span>
+              <h3 class="headline-sm">Speed to Market</h3>
+              <p class="body-md text-muted">Online in days, not months. Fast delivery is part of the deal.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ SERVICES ═══════════════════════ -->
+    <section class="section section-surface" id="services">
+      <div class="container-wide">
+        <div class="section-head">
+          <span class="label-chip reveal">Expertise</span>
+          <h2 class="headline-md reveal reveal-d1">What Sly Systems Does</h2>
+        </div>
+
+        <div class="services-grid">
+          <div class="glass-card svc-card crimson-glow reveal" style="--d:0ms">
+            <h3 class="headline-sm">Website Design</h3>
+            <ul class="svc-list">
+              <li><span class="svc-dot" aria-hidden="true"></span>Responsive layouts</li>
+              <li><span class="svc-dot" aria-hidden="true"></span>Premium aesthetics</li>
+              <li><span class="svc-dot" aria-hidden="true"></span>Conversion-focused</li>
+            </ul>
+          </div>
+          <div class="glass-card svc-card reveal" style="--d:80ms">
+            <h3 class="headline-sm">Landing Pages</h3>
+            <ul class="svc-list">
+              <li><span class="svc-dot" aria-hidden="true"></span>Single-page builds</li>
+              <li><span class="svc-dot" aria-hidden="true"></span>Lead capture forms</li>
+              <li><span class="svc-dot" aria-hidden="true"></span>Offer-focused layouts</li>
+            </ul>
+          </div>
+          <div class="glass-card svc-card reveal" style="--d:160ms">
+            <h3 class="headline-sm">Business Websites</h3>
+            <ul class="svc-list">
+              <li><span class="svc-dot" aria-hidden="true"></span>Multi-section sites</li>
+              <li><span class="svc-dot" aria-hidden="true"></span>Professional look</li>
+              <li><span class="svc-dot" aria-hidden="true"></span>Local operator focus</li>
+            </ul>
+          </div>
+          <div class="glass-card svc-card reveal" style="--d:240ms">
+            <h3 class="headline-sm">Website Support</h3>
+            <ul class="svc-list">
+              <li><span class="svc-dot" aria-hidden="true"></span>Layout &amp; spacing fixes</li>
+              <li><span class="svc-dot" aria-hidden="true"></span>Content updates</li>
+              <li><span class="svc-dot" aria-hidden="true"></span>Responsiveness repairs</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ PRICING ═══════════════════════ -->
+    <section class="section" id="pricing">
+      <div class="container-wide">
+        <div class="section-head">
+          <span class="label-chip reveal">Pricing</span>
+          <h2 class="headline-md reveal reveal-d1">Simple, Honest Pricing</h2>
+          <p class="body-lg text-muted reveal reveal-d2">No fluff. No confusing packages. Just clear offers for real businesses.</p>
+        </div>
+
+        <div class="pricing-grid">
+
+          <div class="glass-card price-card crimson-glow reveal reveal-d1">
+            <div class="price-top">
+              <span class="label-chip label-chip-hot">Most Popular</span>
+              <h3 class="headline-sm">Website Build</h3>
+              <div class="price-display">
+                <span class="price-sym">$</span>
+                <span class="price-num">400</span>
+                <span class="label-mono text-muted price-per">one-time</span>
+              </div>
+              <p class="body-md text-muted">Everything you need to launch a professional, converting website from scratch.</p>
+            </div>
+            <div class="price-features">
+              <div class="pf"><span class="pf-dot"></span>Custom modern website design</div>
+              <div class="pf"><span class="pf-dot"></span>Responsive mobile-friendly layout</div>
+              <div class="pf"><span class="pf-dot"></span>Contact section &amp; lead form setup</div>
+              <div class="pf"><span class="pf-dot"></span>Basic launch support included</div>
+              <div class="pf"><span class="pf-dot"></span>Small edits after delivery</div>
+            </div>
+            <a href="#contact" class="btn-primary btn-full">Enquire Now</a>
+          </div>
+
+          <div class="glass-card price-card reveal reveal-d2">
+            <div class="price-top">
+              <span class="label-chip" style="opacity:0;pointer-events:none">—</span>
+              <h3 class="headline-sm">Website Support</h3>
+              <div class="price-display">
+                <span class="price-sym">$</span>
+                <span class="price-num">50</span>
+                <span class="label-mono text-muted price-per">per hour</span>
+              </div>
+              <p class="body-md text-muted">Targeted fixes and updates for existing sites that need proper attention.</p>
+            </div>
+            <div class="price-features">
+              <div class="pf"><span class="pf-dot"></span>Fix layout and spacing issues</div>
+              <div class="pf"><span class="pf-dot"></span>Update content and sections</div>
+              <div class="pf"><span class="pf-dot"></span>Improve responsiveness</div>
+              <div class="pf"><span class="pf-dot"></span>Clean up design problems</div>
+              <div class="pf"><span class="pf-dot"></span>General site maintenance</div>
+            </div>
+            <a href="#contact" class="btn-secondary btn-full">Get Help</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ PROCESS ═══════════════════════ -->
+    <section class="section section-surface" id="process">
+      <div class="container-wide">
+        <div class="section-head center-head">
+          <span class="label-chip reveal">The Journey</span>
+          <h2 class="headline-md reveal reveal-d1">A simple process that gets you online fast.</h2>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-step reveal" style="--d:0ms">
+            <div class="step-num crimson-glow">1</div>
+            <h4 class="headline-sm">Apply for Free</h4>
+            <p class="body-md text-muted">Start with a quick application so we can see if you're a good fit for what we build.</p>
+          </div>
+          <div class="process-step reveal" style="--d:100ms">
+            <div class="step-num">2</div>
+            <h4 class="headline-sm">Send Your Details</h4>
+            <p class="body-md text-muted">Share your business info, services, and anything you want on the site. We handle the rest.</p>
+          </div>
+          <div class="process-step reveal" style="--d:200ms">
+            <div class="step-num">3</div>
+            <h4 class="headline-sm">Design &amp; Build</h4>
+            <p class="body-md text-muted">We put together a modern site that looks sharp, works on mobile, and captures leads properly.</p>
+          </div>
+          <div class="process-step reveal" style="--d:300ms">
+            <div class="step-num">4</div>
+            <h4 class="headline-sm">Go Live</h4>
+            <p class="body-md text-muted">Deployment and hand-off. Your new site is live and performing from day one.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ CONTACT ═══════════════════════ -->
+    <section class="section" id="contact">
+      <div class="container-wide contact-grid">
+
+        <!-- Left: info -->
+        <div class="contact-info reveal">
+          <span class="label-chip">Ready?</span>
+          <h2 class="display-lg-mobile">Let's build something that actually works.</h2>
+
+          <div class="contact-details">
+            <div class="contact-detail">
+              <span class="label-mono text-crimson-light">Email</span>
+              <a href="mailto:sly@slysystems.dev" class="body-lg">sly@slysystems.dev</a>
+            </div>
+            <div class="contact-detail">
+              <span class="label-mono text-crimson-light">Location</span>
+              <p class="body-lg">Melbourne, Australia</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: form -->
+        <div class="glass-card form-card crimson-glow reveal reveal-d1">
+          <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+            <div class="field">
+              <label class="label-mono text-muted" for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name" />
+            </div>
+            <div class="field">
+              <label class="label-mono text-muted" for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email" />
+            </div>
+            <div class="field">
+              <label class="label-mono text-muted" for="service">Service</label>
+              <select id="service" name="service">
+                <option value="" disabled selected>Select a service…</option>
+                <option value="website-build">Website Build — $400</option>
+                <option value="website-support">Website Support — $50/hr</option>
+                <option value="other">Other / Not sure</option>
+              </select>
+            </div>
+            <div class="field">
+              <label class="label-mono text-muted" for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us about your vision…" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary btn-full">Send Message</button>
+            <p class="form-status" id="formStatus" role="status"></p>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+  <footer class="site-footer">
+    <div class="container-wide footer-inner">
+      <div>
+        <div class="footer-brand">Sly Systems</div>
+        <p class="label-mono text-muted">© 2026 Sly Systems. All rights reserved.</p>
+      </div>
+      <div class="footer-links">
+        <a href="/qualify">Qualify</a>
+        <a href="/apply">Apply</a>
+        <a href="#contact">Contact</a>
+        <a href="#top">↑ Top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

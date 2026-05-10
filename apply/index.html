@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apply Now | Sly Systems</title>
+  <meta name="description" content="Apply to get your business live with Sly Systems." />
+  <meta name="theme-color" content="#ff2a3f" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="apply.css" />
+</head>
+<body>
+
+  <!-- Noise texture overlay -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════ NAV ═══════════════════════ -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav-inner container-wide">
+      <a href="/" class="brand">Sly Systems</a>
+
+      <div class="desktop-nav">
+        <a href="/#services" class="nav-link">Services</a>
+        <a href="/#pricing" class="nav-link">Pricing</a>
+        <a href="/#process" class="nav-link">Process</a>
+        <a href="/#contact" class="nav-link">Contact</a>
+      </div>
+
+      <div class="nav-end">
+        <a href="/qualify" class="btn-ghost-nav">Not sure? Qualify first</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+      <a href="/#services">Services</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#process">Process</a>
+      <a href="/qualify">See If You Qualify</a>
+      <a href="/#contact">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="apply-section">
+      <div class="container-wide apply-container">
+
+        <!-- Back link -->
+        <a href="/qualify" class="back-btn">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 4L6 8l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Back
+        </a>
+
+        <!-- Progress bar -->
+        <div class="progress-wrap" aria-label="Application progress">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill" style="width:0%"></div>
+          </div>
+          <div class="progress-labels">
+            <span class="label-mono text-muted" id="progressPct">0% completed</span>
+            <span class="label-mono text-muted" id="progressFields">0 / 7 fields</span>
+          </div>
+        </div>
+
+        <!-- Shell -->
+        <div class="apply-shell glass-card reveal">
+
+          <!-- Header -->
+          <div class="apply-head">
+            <span class="label-chip">Sly Systems</span>
+            <h1 class="apply-title">Apply to Get Your<br/>Business Live</h1>
+            <p class="body-lg text-muted apply-sub">For approved registered businesses, the setup fee can be waived.</p>
+          </div>
+
+          <!-- Alert -->
+          <div class="apply-alert" role="alert">
+            <span class="apply-alert-icon" aria-hidden="true">⚠️</span>
+            <p class="body-md">We review every application. Fake details, missing ABN, or invalid submissions are automatically rejected without response.</p>
+          </div>
+
+          <!-- Form -->
+          <form class="apply-form" id="applyForm" novalidate>
+
+            <div class="apply-grid">
+
+              <div class="apply-field">
+                <label class="label-mono text-muted" for="fullName">
+                  Your Name <span class="req" aria-label="required">*</span>
+                </label>
+                <input type="text" id="fullName" name="fullName" placeholder="Your full name" required autocomplete="name" />
+              </div>
+
+              <div class="apply-field">
+                <label class="label-mono text-muted" for="mobile">
+                  Mobile Number <span class="req" aria-label="required">*</span>
+                </label>
+                <input type="tel" id="mobile" name="mobile" placeholder="04xx xxx xxx" required autocomplete="tel" />
+              </div>
+
+              <div class="apply-field">
+                <label class="label-mono text-muted" for="abn">
+                  ABN (11 digits) <span class="req" aria-label="required">*</span>
+                </label>
+                <input type="text" id="abn" name="abn" inputmode="numeric" maxlength="11" placeholder="12345678901" required />
+                <small class="label-mono text-muted">Invalid or unverifiable ABNs are automatically rejected.</small>
+              </div>
+
+              <div class="apply-field">
+                <label class="label-mono text-muted" for="businessName">
+                  Business Name <span class="req" aria-label="required">*</span>
+                </label>
+                <input type="text" id="businessName" name="businessName" placeholder="Your business name" required autocomplete="organization" />
+              </div>
+
+              <div class="apply-field">
+                <label class="label-mono text-muted" for="businessEmail">
+                  Business Email <span class="req" aria-label="required">*</span>
+                </label>
+                <input type="email" id="businessEmail" name="businessEmail" placeholder="name@business.com" required autocomplete="email" />
+              </div>
+
+              <div class="apply-field">
+                <label class="label-mono text-muted" for="industry">
+                  Industry / Service <span class="req" aria-label="required">*</span>
+                </label>
+                <input type="text" id="industry" name="industry" placeholder="e.g. Plumbing, Cleaning, Automotive" required />
+              </div>
+
+            </div>
+
+            <div class="apply-field apply-field-full">
+              <label class="label-mono text-muted" for="details">What do you need the website for?</label>
+              <textarea id="details" name="details" rows="5" placeholder="Tell us what your business does, what pages you need, and what you want people to do on the site."></textarea>
+            </div>
+
+            <div class="apply-field apply-field-full">
+              <label class="label-mono text-muted apply-tl-label">How soon do you need the website live?</label>
+              <div class="timeline-grid">
+                <label class="timeline-option">
+                  <input type="radio" name="timeline" value="ASAP" />
+                  <span class="timeline-card">
+                    <span class="tl-icon" aria-hidden="true">🔥</span>
+                    <span class="tl-label">ASAP</span>
+                  </span>
+                </label>
+                <label class="timeline-option">
+                  <input type="radio" name="timeline" value="1-2 weeks" />
+                  <span class="timeline-card">
+                    <span class="tl-icon" aria-hidden="true">📅</span>
+                    <span class="tl-label">1–2 weeks</span>
+                  </span>
+                </label>
+                <label class="timeline-option">
+                  <input type="radio" name="timeline" value="This month" />
+                  <span class="timeline-card">
+                    <span class="tl-icon" aria-hidden="true">🗓️</span>
+                    <span class="tl-label">This month</span>
+                  </span>
+                </label>
+                <label class="timeline-option">
+                  <input type="radio" name="timeline" value="Not sure yet" />
+                  <span class="timeline-card">
+                    <span class="tl-icon" aria-hidden="true">🤔</span>
+                    <span class="tl-label">Not sure yet</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <div class="apply-actions">
+              <button type="submit" class="btn-primary apply-submit">
+                Submit Application
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+              <button type="button" id="saveDraftBtn" class="btn-secondary apply-draft">Save Draft</button>
+            </div>
+
+            <p id="applyStatus" class="apply-status" role="status"></p>
+
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+  <footer class="site-footer">
+    <div class="container-wide footer-inner">
+      <div>
+        <div class="footer-brand">Sly Systems</div>
+        <p class="label-mono text-muted">© 2026 Sly Systems. All rights reserved.</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/qualify">Qualify</a>
+        <a href="/#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="apply.js"></script>
+</body>
+</html>

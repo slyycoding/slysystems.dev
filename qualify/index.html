@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>See If You Qualify | Sly Systems</title>
+  <meta name="description" content="Find out if your business is a good fit for Sly Systems web design services." />
+  <meta name="theme-color" content="#ff2a3f" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="qualify.css" />
+</head>
+<body>
+
+  <!-- Noise texture overlay -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════ NAV ═══════════════════════ -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav-inner container-wide">
+      <a href="/" class="brand">Sly Systems</a>
+
+      <div class="desktop-nav">
+        <a href="/#services" class="nav-link">Services</a>
+        <a href="/#pricing" class="nav-link">Pricing</a>
+        <a href="/#process" class="nav-link">Process</a>
+        <a href="/#contact" class="nav-link">Contact</a>
+      </div>
+
+      <div class="nav-end">
+        <a href="/apply" class="btn-cta">Apply Now</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+      <a href="/#services">Services</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#process">Process</a>
+      <a href="/#contact">Contact</a>
+      <a href="/apply" class="mobile-cta">Apply Now</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════ HERO ═══════════════════════ -->
+    <section class="q-hero">
+      <div class="container-wide q-hero-inner">
+        <a href="/" class="back-btn">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 4L6 8l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Back Home
+        </a>
+        <span class="label-chip reveal">Qualify</span>
+        <h1 class="q-title reveal reveal-d1">Before you proceed…</h1>
+        <p class="body-lg text-muted q-sub reveal reveal-d2">
+          Let's make sure we're a fit for each other. We only work with businesses
+          we can genuinely help — here's how to know if that's you.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ FIT CARDS ═══════════════════════ -->
+    <section class="section q-cards-section">
+      <div class="container-wide">
+        <div class="q-cards">
+
+          <article class="glass-card q-card q-card-yes reveal reveal-d1">
+            <div class="q-card-header">
+              <span class="label-chip label-chip-hot">Who this is for</span>
+              <h2 class="headline-md">This is for you if…</h2>
+            </div>
+            <div class="q-divider"></div>
+            <ul class="q-list">
+              <li>
+                <span class="q-icon" aria-hidden="true">✅</span>
+                <span>You're a tradie, solo operator, or service business that needs a clean online presence.</span>
+              </li>
+              <li>
+                <span class="q-icon" aria-hidden="true">✅</span>
+                <span>You want a fast-loading site that works properly and actually makes you look professional.</span>
+              </li>
+              <li>
+                <span class="q-icon" aria-hidden="true">✅</span>
+                <span>You need people to find your services and contact you — nothing overcomplicated.</span>
+              </li>
+            </ul>
+            <a href="#industries" class="q-btn btn-primary">Continue →</a>
+          </article>
+
+          <article class="glass-card q-card q-card-no reveal reveal-d2">
+            <div class="q-card-header">
+              <span class="label-chip">Not a fit</span>
+              <h2 class="headline-md">This isn't for you if…</h2>
+            </div>
+            <div class="q-divider q-divider-muted"></div>
+            <ul class="q-list">
+              <li>
+                <span class="q-icon" aria-hidden="true">❌</span>
+                <span>You need ecommerce, a blog, or complex functionality beyond a contact form.</span>
+              </li>
+              <li>
+                <span class="q-icon" aria-hidden="true">❌</span>
+                <span>You're a photographer, artist, content creator, café, or band.</span>
+              </li>
+              <li>
+                <span class="q-icon" aria-hidden="true">❌</span>
+                <span>You use the word "aesthetic" unironically or have a very specific vision we'll never match.</span>
+              </li>
+            </ul>
+            <a href="/#contact" class="q-btn btn-secondary">Need Something Custom?</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ INDUSTRY TABLE ═══════════════════════ -->
+    <section class="section section-surface" id="industries">
+      <div class="container-wide">
+        <div class="q-table-head">
+          <span class="label-chip reveal">Industry fit</span>
+          <h2 class="headline-md reveal reveal-d1">Do we work in your industry?</h2>
+          <p class="body-lg text-muted reveal reveal-d2">Quick reference — find your industry and see where you land.</p>
+        </div>
+
+        <div class="q-table-shell glass-card reveal reveal-d1">
+          <div class="q-table-header">
+            <div class="q-th q-th-yes">
+              <span class="q-th-icon" aria-hidden="true">👍</span>
+              YES — We work with these
+            </div>
+            <div class="q-th q-th-no">
+              <span class="q-th-icon" aria-hidden="true">👎</span>
+              NO — Not our thing
+            </div>
+          </div>
+
+          <div class="q-table-body">
+            <div class="q-row">
+              <div class="q-cell q-cell-yes">Trades &amp; Construction</div>
+              <div class="q-cell q-cell-no">Retail / eCommerce / Product-based</div>
+            </div>
+            <div class="q-row">
+              <div class="q-cell q-cell-yes">Automotive</div>
+              <div class="q-cell q-cell-no">Photographers, Videographers, Artists</div>
+            </div>
+            <div class="q-row">
+              <div class="q-cell q-cell-yes">Cleaning &amp; Industrial</div>
+              <div class="q-cell q-cell-no">Content &amp; Digital Brands</div>
+            </div>
+            <div class="q-row">
+              <div class="q-cell q-cell-yes">Simple white-collar services</div>
+              <div class="q-cell q-cell-no">Hospitality &amp; Food</div>
+            </div>
+            <div class="q-row">
+              <div class="q-cell q-cell-yes">Gardening &amp; Outdoor</div>
+              <div class="q-cell q-cell-no">Events &amp; Weddings</div>
+            </div>
+            <div class="q-row">
+              <div class="q-cell q-cell-yes">Mobile Services</div>
+              <div class="q-cell q-cell-no">High-maintenance clients</div>
+            </div>
+            <div class="q-row">
+              <div class="q-cell q-cell-yes">Property &amp; Maintenance</div>
+              <div class="q-cell q-cell-no">Brand-heavy projects</div>
+            </div>
+            <div class="q-row">
+              <div class="q-cell q-cell-yes">Clinics, Chiros, Facilities, Gyms</div>
+              <div class="q-cell q-cell-no">"I have a unique idea" types</div>
+            </div>
+            <div class="q-row">
+              <div class="q-cell q-cell-yes">Pest control, Locksmiths, Removalists</div>
+              <div class="q-cell q-cell-no">Coaches &amp; Course Creators</div>
+            </div>
+          </div>
+
+          <div class="q-table-cta">
+            <div class="q-table-cta-text">
+              <h3 class="headline-sm">Sound like you?</h3>
+              <p class="body-md text-muted">If you're in the YES column, let's get you online properly.</p>
+            </div>
+            <a href="/apply" class="btn-primary">Apply Now →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+  <footer class="site-footer">
+    <div class="container-wide footer-inner">
+      <div>
+        <div class="footer-brand">Sly Systems</div>
+        <p class="label-mono text-muted">© 2026 Sly Systems. All rights reserved.</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/apply">Apply</a>
+        <a href="/#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="qualify.js"></script>
+</body>
+</html>
