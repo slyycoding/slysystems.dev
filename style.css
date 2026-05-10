@@ -1281,18 +1281,14 @@ img { display: block; max-width: 100%; }
   overflow: hidden;
 }
 .footer-ed-top {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  padding-top: 2.5rem;
-  padding-bottom: 1.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
-.footer-ed-top-center { text-align: center; }
-.footer-ed-top-right  { text-align: right; }
-.footer-ed-top .label-mono {
-  line-height: 1.9;
-  font-size: 0.65rem;
-}
+.footer-ed-top-right { text-align: right; }
 .footer-ed-name {
   font-family: var(--font-head);
   font-size: clamp(4rem, 11.5vw, 10.5rem);
