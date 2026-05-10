@@ -1285,11 +1285,16 @@ img { display: block; max-width: 100%; }
    NAV LOGO
    ════════════════════════════════════════════════════════════ */
 /* Nav logo */
-.brand-logo-wrap { flex-shrink: 0; }
+.brand-logo-wrap {
+  flex-shrink: 0;
+  background: transparent;
+  line-height: 0;
+}
 .brand-logo-img {
   display: block;
   height: 44px;
   width: auto;
+  background: transparent;
 }
 
 /* ════════════════════════════════════════════════════════════
