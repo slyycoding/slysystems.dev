@@ -1168,32 +1168,36 @@ img { display: block; max-width: 100%; }
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1rem 1.25rem;
-  background: var(--surface);
-  border: 1px solid var(--outline-var);
-  border-radius: var(--r-lg);
+  padding: 1.1rem 1.5rem;
+  background: rgba(13, 13, 13, 0.85);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: var(--r-xl);
   cursor: pointer;
   text-align: left;
   color: var(--on-surface);
   font-family: var(--font-head);
   font-size: 0.95rem;
   font-weight: 500;
-  transition: border-color 0.2s var(--ease), background 0.2s var(--ease);
+  transition: border-color 0.22s var(--ease), box-shadow 0.22s var(--ease);
 }
 .faq-trigger:hover {
-  border-color: var(--primary-cta);
-  background: var(--surface-low);
+  border-color: rgba(255, 42, 63, 0.4);
+  box-shadow: 0 0 0 1px rgba(255, 42, 63, 0.15);
 }
 .faq-item.open .faq-trigger {
-  border-color: var(--primary-cta);
+  border-color: rgba(255, 42, 63, 0.55);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   border-bottom-color: transparent;
+  box-shadow: none;
 }
 .faq-chevron {
   flex-shrink: 0;
-  color: var(--muted);
-  transition: transform 0.25s var(--ease), color 0.2s;
+  color: rgba(255,255,255,0.3);
+  transition: transform 0.25s var(--ease), color 0.22s;
 }
 .faq-item.open .faq-chevron {
   transform: rotate(180deg);
@@ -1203,18 +1207,20 @@ img { display: block; max-width: 100%; }
   height: 0;
   overflow: hidden;
   transition: height 0.3s var(--ease);
-  background: var(--surface);
-  border: 1px solid var(--primary-cta);
+  background: rgba(13, 13, 13, 0.85);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 42, 63, 0.55);
   border-top: none;
-  border-bottom-left-radius: var(--r-lg);
-  border-bottom-right-radius: var(--r-lg);
+  border-bottom-left-radius: var(--r-xl);
+  border-bottom-right-radius: var(--r-xl);
 }
 .faq-body-inner {
-  padding: 1rem 1.25rem 1.25rem;
+  padding: 1.1rem 1.5rem 1.35rem;
 }
 .faq-body-inner p {
   font-size: 0.875rem;
-  line-height: 1.7;
+  line-height: 1.75;
   color: var(--muted-hi);
 }
 
