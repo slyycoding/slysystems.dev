@@ -1279,34 +1279,11 @@ img { display: block; max-width: 100%; }
    NAV LOGO
    ════════════════════════════════════════════════════════════ */
 /* Nav logo */
-.brand-logo-wrap {
-  height: 42px;
-  width: 64px;
-  overflow: hidden;
-  flex-shrink: 0;
-}
+.brand-logo-wrap { flex-shrink: 0; }
 .brand-logo-img {
   display: block;
-  width: 64px;
-  height: 64px;
-  object-fit: cover;
-  object-position: center top;
-  mix-blend-mode: screen;
-}
-
-/* Footer logo */
-.footer-logo-wrap {
-  height: 90px;
-  width: 136px;
-  overflow: hidden;
-}
-.footer-logo-img {
-  display: block;
-  width: 136px;
-  height: 136px;
-  object-fit: cover;
-  object-position: center top;
-  mix-blend-mode: screen;
+  height: 40px;
+  width: auto;
 }
 
 /* ════════════════════════════════════════════════════════════
