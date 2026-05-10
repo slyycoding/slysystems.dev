@@ -11,6 +11,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="qualify.css" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon.png" />
+  <style>
+    .brand-logo-wrap { flex-shrink:0; background:transparent; line-height:0; }
+    .brand-logo-img  { display:block; height:44px; width:auto; background:transparent; }
+  </style>
 </head>
 <body>
 
@@ -20,7 +25,9 @@
   <!-- ═══════════════════════ NAV ═══════════════════════ -->
   <header class="site-header" id="siteHeader">
     <nav class="nav-inner container-wide">
-      <a href="/" class="brand">Sly Systems</a>
+      <a href="/" class="brand" aria-label="Sly Systems">
+        <div class="brand-logo-wrap"><img src="/assets/sly-logo.png" class="brand-logo-img" alt="Sly Systems" /></div>
+      </a>
 
       <div class="desktop-nav">
         <a href="/#services" class="nav-link">Services</a>
