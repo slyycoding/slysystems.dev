@@ -12,6 +12,11 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://slysystems.dev" />
   <link rel="canonical" href="https://slysystems.dev" />
+  <link rel="icon" type="image/png" href="/assets/logo-full.png" />
+  <link rel="apple-touch-icon" href="/assets/logo-full.png" />
+  <meta property="og:image" content="https://slysystems.dev/assets/logo-full.png" />
+  <meta property="og:image:width" content="361" />
+  <meta property="og:image:height" content="281" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,7 +31,9 @@
   <!-- ═══════════════════════ NAV ═══════════════════════ -->
   <header class="site-header" id="siteHeader">
     <nav class="nav-inner container-wide">
-      <a href="/" class="brand">Sly Systems</a>
+      <a href="/" class="brand">
+        <img src="/assets/logo-full.png" alt="Sly Systems" class="brand-logo" />
+      </a>
 
       <div class="desktop-nav">
         <a href="#services" class="nav-link">Services</a>
@@ -396,7 +403,7 @@
               <span>What platforms and technologies do you build on?</span>
               <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
-            <div class="faq-body"><div class="faq-body-inner"><p>The stack is chosen based on your project's requirements. Marketing sites and landing pages are built with semantic HTML, CSS, and vanilla JavaScript for maximum performance and zero bloat. For dynamic web applications we work with React, Next.js, and TypeScript — paired with Tailwind CSS for styling and Prisma or Supabase for data. CMS-driven builds use Sanity or Contentful. Every project is production-grade, fully typed, and version-controlled from day one.</p></div></div>
+            <div class="faq-body"><div class="faq-body-inner"><p>The framework and language stack is always chosen to match the project's scope and requirements — there's no one-size-fits-all approach. Marketing sites and landing pages are built with semantic HTML, CSS, and vanilla JavaScript for maximum performance and zero bloat. Dynamic web applications use React, Next.js, and TypeScript paired with Tailwind CSS for styling, and Prisma or Supabase for data. CMS-driven builds use Sanity or Contentful. Every project is production-grade, fully typed, and version-controlled from day one.</p></div></div>
           </div>
 
           <div class="faq-item">
@@ -499,38 +506,41 @@
   </main>
 
   <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
-  <footer class="site-footer">
-    <div class="container-wide footer-inner">
+  <footer class="footer-editorial">
 
-      <div class="footer-brand-col">
-        <div class="footer-brand">Sly Systems</div>
-        <p class="body-md text-muted footer-tagline">Modern websites for tradies and service businesses across Australia. Built fast, built right.</p>
-        <p class="label-mono text-muted">Melbourne, AU · sly@slysystems.dev</p>
+    <div class="footer-ed-top container-wide">
+      <div>
+        <p class="label-mono text-muted">Web Design &amp; Development</p>
+        <p class="label-mono text-muted">React · Next.js · TypeScript</p>
       </div>
-
-      <div class="footer-nav-col">
-        <p class="label-mono text-muted footer-col-head">Navigate</p>
-        <a href="#services">Services</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#work">Work</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-        <a href="#top">↑ Top</a>
+      <div class="footer-ed-top-center">
+        <p class="label-mono text-muted">Est. 2026 · Australia-wide</p>
+        <p class="label-mono text-muted">slysystems.dev</p>
       </div>
-
-      <div class="footer-nav-col">
-        <p class="label-mono text-muted footer-col-head">Get Started</p>
-        <a href="/qualify">Qualify for a site</a>
-        <a href="/apply">Apply now</a>
-        <a href="mailto:sly@slysystems.dev">Email directly</a>
-      </div>
-
-    </div>
-    <div class="footer-bottom">
-      <div class="container-wide footer-bottom-inner">
-        <p class="label-mono text-muted">© 2026 SLY SYSTEMS · WEB DESIGN MELBOURNE · ALL RIGHTS RESERVED</p>
+      <div class="footer-ed-top-right">
+        <p class="label-mono text-muted">Melbourne, AU</p>
+        <p class="label-mono text-muted">2026</p>
       </div>
     </div>
+
+    <div class="footer-ed-name">
+      <span>Sly</span><span class="footer-ed-red">Systems</span>
+    </div>
+
+    <div class="footer-ed-bottom container-wide">
+      <a href="#contact" class="footer-ed-link">Contact</a>
+      <div class="footer-ed-contact">
+        <a href="mailto:sly@slysystems.dev" class="footer-ed-link">sly@slysystems.dev</a>
+        <span class="footer-ed-sep">·</span>
+        <a href="tel:0493141801" class="footer-ed-link">0493 141 801</a>
+      </div>
+      <a href="#top" class="footer-ed-link">↑ Top</a>
+    </div>
+
+    <div class="footer-ed-legal container-wide">
+      <p class="label-mono text-muted">© 2026 SLY SYSTEMS · ALL RIGHTS RESERVED · MELBOURNE, AUSTRALIA</p>
+    </div>
+
   </footer>
 
   <script src="script.js"></script>
