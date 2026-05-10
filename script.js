@@ -113,6 +113,76 @@ if (form && status) {
   });
 }
 
+/* ─── Google Reviews ────────────────────────────────────────── */
+(async () => {
+  const GOOGLE_API_KEY = '';         // ← paste your Google Places API key here
+  const PLACE_ID       = '';         // ← paste your Place ID here (see below)
+  // To find your Place ID:
+  //   1. Go to https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder
+  //   2. Search "Sly Systems Melbourne"
+  //   3. Copy the Place ID (starts with ChIJ...)
+
+  const track   = document.getElementById('reviewsTrack');
+  const badge   = document.getElementById('ratingText');
+  if (!track) return;
+
+  if (!GOOGLE_API_KEY || !PLACE_ID) {
+    track.innerHTML = `
+      <div class="review-card" style="width:340px;">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Add your Google Places API key and Place ID to script.js to load live reviews automatically.</p>
+        <div class="review-author">
+          <div class="review-avatar">SS</div>
+          <div><p class="review-author-name">Sly Systems</p><p class="review-author-date">Setup required</p></div>
+        </div>
+      </div>`;
+    if (badge) badge.textContent = 'Google Reviews';
+    return;
+  }
+
+  try {
+    const res = await fetch(
+      `https://places.googleapis.com/v1/places/${PLACE_ID}?fields=reviews,rating,userRatingCount,displayName&key=${GOOGLE_API_KEY}`
+    );
+    const data = await res.json();
+
+    if (badge && data.rating) {
+      const stars = '★'.repeat(Math.round(data.rating)) + '☆'.repeat(5 - Math.round(data.rating));
+      badge.textContent = `${data.rating} ${stars} · ${data.userRatingCount} reviews on Google`;
+    }
+
+    const reviews = data.reviews ?? [];
+    if (!reviews.length) { track.innerHTML = '<p class="body-md text-muted" style="padding:2rem;">No reviews yet.</p>'; return; }
+
+    const makeCard = r => {
+      const stars = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
+      const initials = r.authorAttribution.displayName.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
+      const date = new Date(r.publishTime).toLocaleDateString('en-AU', { month: 'short', year: 'numeric' });
+      return `
+        <div class="review-card">
+          <div class="review-stars">${stars}</div>
+          <p class="review-text">"${r.originalText?.text ?? r.text?.text ?? ''}"</p>
+          <div class="review-author">
+            ${r.authorAttribution.photoUri
+              ? `<img src="${r.authorAttribution.photoUri}" class="review-avatar" alt="" />`
+              : `<div class="review-avatar">${initials}</div>`}
+            <div>
+              <p class="review-author-name">${r.authorAttribution.displayName}</p>
+              <p class="review-author-date">${date}</p>
+            </div>
+          </div>
+        </div>`;
+    };
+
+    const cards = reviews.map(makeCard).join('');
+    track.innerHTML = cards + cards; // duplicate for seamless loop
+  } catch (err) {
+    console.warn('Google Reviews failed to load:', err);
+    if (badge) badge.textContent = 'See our reviews on Google';
+    track.innerHTML = '<div class="review-placeholder glass-card"><p class="body-md text-muted" style="text-align:center;padding:2rem;">Reviews temporarily unavailable.</p></div>';
+  }
+})();
+
 /* ─── Smooth scroll with header offset ──────────────────────── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {

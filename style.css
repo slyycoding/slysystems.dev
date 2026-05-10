@@ -860,6 +860,98 @@ img { display: block; max-width: 100%; }
 }
 
 /* ════════════════════════════════════════════════════════════
+   GOOGLE REVIEWS
+   ════════════════════════════════════════════════════════════ */
+.google-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding: 6px 14px;
+  border-radius: var(--r);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--outline-var);
+  font-size: 0.72rem;
+  color: var(--muted-hi);
+}
+.reviews-carousel-wrap {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  margin-bottom: 2rem;
+}
+.reviews-track {
+  display: flex;
+  gap: 1.25rem;
+  width: max-content;
+  animation: reviews-scroll 32s linear infinite;
+}
+.reviews-track:hover { animation-play-state: paused; }
+@keyframes reviews-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.review-card {
+  width: 340px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  background: var(--surface-container);
+  border: 1px solid var(--outline-var);
+  border-radius: var(--r-xl);
+}
+.review-stars { color: #FBBC05; font-size: 1rem; letter-spacing: 0.05em; }
+.review-text {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--muted-hi);
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--outline-var);
+}
+.review-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--surface-high);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--muted);
+  border: 1px solid var(--outline-var);
+}
+.review-author-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--on-surface);
+}
+.review-author-date {
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+.review-placeholder { min-width: 100%; text-align: center; }
+.reviews-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+/* ════════════════════════════════════════════════════════════
    WORK / PORTFOLIO
    ════════════════════════════════════════════════════════════ */
 .work-grid {
