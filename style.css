@@ -1271,10 +1271,35 @@ img { display: block; max-width: 100%; }
 /* ════════════════════════════════════════════════════════════
    NAV LOGO
    ════════════════════════════════════════════════════════════ */
-.brand-logo-svg {
-  height: 32px;
-  width: auto;
+/* Nav logo — crop bottom text, blend black bg away */
+.brand-logo-wrap {
+  height: 40px;
+  width: 40px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.brand-logo-img {
   display: block;
+  width: 53px;
+  height: 53px;
+  object-fit: cover;
+  object-position: center top;
+  mix-blend-mode: screen;
+}
+
+/* Footer logo */
+.footer-logo-wrap {
+  height: 80px;
+  width: 80px;
+  overflow: hidden;
+}
+.footer-logo-img {
+  display: block;
+  width: 105px;
+  height: 105px;
+  object-fit: cover;
+  object-position: center top;
+  mix-blend-mode: screen;
 }
 
 /* ════════════════════════════════════════════════════════════
