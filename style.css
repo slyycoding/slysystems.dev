@@ -528,8 +528,13 @@ img { display: block; max-width: 100%; }
 }
 .card-icon {
   display: block;
-  font-size: 1.75rem;
-  margin-bottom: 0.75rem;
+  width: 32px;
+  height: 32px;
+  margin-bottom: 1rem;
+}
+.card-icon svg {
+  width: 32px;
+  height: 32px;
 }
 
 /* ════════════════════════════════════════════════════════════
