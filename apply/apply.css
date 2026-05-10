@@ -422,7 +422,9 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   background: rgba(255,42,63,0.10);
   border-color: rgba(255,42,63,0.38);
 }
-.tl-icon  { font-size: 1.35rem; }
+.tl-icon { display: flex; align-items: center; justify-content: center; color: rgba(229,226,225,0.55); }
+.tl-icon svg { width: 22px; height: 22px; }
+.timeline-option input:checked + .timeline-card .tl-icon { color: #ff2a3f; }
 .tl-label {
   font-family: var(--font-mono);
   font-size: 0.68rem;

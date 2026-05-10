@@ -527,16 +527,22 @@ img { display: block; max-width: 100%; }
   border-color: rgba(255, 255, 255, 0.14);
 }
 .card-icon-wrap {
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   border-radius: 12px;
   background: rgba(255, 42, 63, 0.08);
   border: 1px solid rgba(255, 42, 63, 0.18);
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   margin-bottom: 1.25rem;
   transition: background 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+.card-icon-wrap svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
 }
 .glass-card:hover .card-icon-wrap {
   background: rgba(255, 42, 63, 0.15);
