@@ -836,6 +836,30 @@ img { display: block; max-width: 100%; }
 }
 
 /* ════════════════════════════════════════════════════════════
+   SERVICES CAROUSEL
+   ════════════════════════════════════════════════════════════ */
+.svc-carousel-wrap {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+.svc-track {
+  display: flex;
+  gap: 1.25rem;
+  width: max-content;
+  animation: svc-scroll 22s linear infinite;
+}
+.svc-track:hover { animation-play-state: paused; }
+@keyframes svc-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.svc-track .svc-card {
+  width: 280px;
+  flex-shrink: 0;
+}
+
+/* ════════════════════════════════════════════════════════════
    WORK / PORTFOLIO
    ════════════════════════════════════════════════════════════ */
 .work-grid {
